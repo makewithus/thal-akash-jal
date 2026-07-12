@@ -1,0 +1,294 @@
+/* ============================================================
+   ABOUT US PAGE — White Primary + Blue Secondary Theme
+   This CSS overrides the default Metis color scheme
+   ONLY when loaded on the about-us.html page.
+   ============================================================ */
+
+/* ── Override CSS custom properties for the about-us page ── */
+:root {
+  --taj-white: #ffffff;
+  --taj-off-white: #f5f5f3;
+  --taj-blue-primary: #1a3a6b;
+  --taj-blue-mid: #2a5298;
+  --taj-blue-light: #3b6cc7;
+  --taj-blue-dark: #0e2240;
+  --taj-blue-accent: #4a90d9;
+  --taj-navy: #0d1b3e;
+  --taj-text-dark: #1a2744;
+}
+
+/* ── Hero Section ── */
+.section.about-us {
+  background-image:
+    linear-gradient(90deg, var(--taj-blue-primary) 40%, rgba(42, 82, 152, 0.5)),
+    linear-gradient(180deg, var(--taj-navy) 30%, rgba(13, 27, 62, 0.6)),
+    url(6893263d1e27013b67b77d36/689613e8ff52b838cd4e820f_about-us.webp) !important;
+  background-position: 0 0, 0 0, 50% !important;
+  background-size: auto, auto, cover !important;
+}
+
+/* ── Navbar ── */
+.navbar {
+  background-color: var(--taj-navy) !important;
+}
+
+.navbar-mobile {
+  background-color: var(--taj-navy) !important;
+}
+
+.navbar__wrapper {
+  background-color: transparent !important;
+}
+
+/* ── About Card Section (white card with image) ── */
+.section.card {
+  background-color: var(--taj-white) !important;
+}
+
+.about__card-img-1 {
+  background-image: url(6893263d1e27013b67b77d36/6894737d4f2cf664e87e9d2e_card.webp) !important;
+  background-position: 50% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.about__card-text-wrapper {
+  color: var(--taj-text-dark) !important;
+}
+
+.about__card-text-wrapper h2 {
+  color: var(--taj-blue-primary) !important;
+}
+
+.about__card-text-wrapper p {
+  color: var(--taj-text-dark) !important;
+}
+
+/* ── "Meet The Team" Button ── */
+.button.white-background {
+  border-color: var(--taj-blue-mid) !important;
+  background-color: var(--taj-blue-mid) !important;
+  color: #fff !important;
+}
+
+.button.white-background:hover {
+  background-color: transparent !important;
+  color: var(--taj-blue-mid) !important;
+}
+
+/* ── Main CTA Button (Talk to Us) in hero ── */
+.button-wrapper {
+  border-color: var(--taj-blue-accent) !important;
+}
+
+.button-gradient {
+  background-image: linear-gradient(90deg, var(--taj-blue-mid), var(--taj-blue-dark)) !important;
+}
+
+.button-text {
+  color: var(--taj-white) !important;
+}
+
+/* ── Innovation / Strategic Advisory Section ── */
+.section.home__innovation {
+  background-color: var(--taj-white) !important;
+}
+
+.expertise-solutions__text-wrapper {
+  color: var(--taj-text-dark) !important;
+}
+
+.expertise-solutions__text-wrapper h2 {
+  color: var(--taj-blue-primary) !important;
+}
+
+.expertise-solutions__text-wrapper p {
+  color: var(--taj-text-dark) !important;
+}
+
+/* ── Solution Cards ── */
+.expertise-solution__card-item._1 {
+  background-color: var(--taj-blue-primary) !important;
+}
+
+.expertise-solution__card-item._2 {
+  background-color: var(--taj-blue-mid) !important;
+}
+
+.expertise-solution__card-item._3 {
+  background-color: var(--taj-blue-mid) !important;
+}
+
+.expertise-solution__card-item._4 {
+  background-color: var(--taj-blue-primary) !important;
+}
+
+.expertise-solution__card-item {
+  color: var(--taj-white) !important;
+}
+
+.expertise-solution__card-item:hover {
+  color: var(--taj-off-white) !important;
+  filter: brightness(1.1);
+}
+
+.text-style-card-consolas {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.text-style-card-heading {
+  color: var(--taj-white) !important;
+}
+
+/* ── Card Buttons (Learn More) ── */
+.button.inverse {
+  border-color: var(--taj-white) !important;
+  background-color: transparent !important;
+  color: var(--taj-white) !important;
+}
+
+.button.inverse:hover {
+  background-color: var(--taj-white) !important;
+  color: var(--taj-blue-primary) !important;
+}
+
+/* ── Dark CTA Section ── */
+.section.dark {
+  background-color: var(--taj-navy) !important;
+}
+
+.section.dark h2 {
+  color: var(--taj-white) !important;
+}
+
+.section.dark p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.expertise__icon-line {
+  background-color: rgba(74, 144, 217, 0.4) !important;
+}
+
+.expertise__cta-wrapper .button-wrapper {
+  border-color: var(--taj-blue-accent) !important;
+}
+
+/* ── CTA image section ── */
+.expertise__card-solution-img {
+  border-color: var(--taj-blue-mid) !important;
+}
+
+
+
+/* ── Trusted-by Carousel Section ── */
+.section.trusted-by {
+  background-color: var(--taj-white) !important;
+}
+
+/* ── Megamenu Dropdown ── */
+.megamenu__dropdown-wrapper {
+  background-color: var(--taj-navy) !important;
+}
+
+.megamenu__heading {
+  color: var(--taj-white) !important;
+}
+
+.megamenu__divider {
+  background-color: var(--taj-blue-accent) !important;
+}
+
+.megamenu__link-item {
+  color: var(--taj-white) !important;
+}
+
+.megamenu__link-item:hover {
+  color: var(--taj-blue-accent) !important;
+}
+
+/* ── Solutions Radar BG element ── */
+.expertise__solutions-radar-wrapper {
+  opacity: 0.4;
+}
+
+/* ── Subheading Text (Company Profile label) ── */
+.text-style-solution-subheading {
+  color: var(--taj-blue-accent) !important;
+}
+
+/* ── Logo text in navbar ── */
+.logo-img {
+  color: white !important;
+}
+
+/* ── Navigation overlay ── */
+.nav-overlay {
+  background-color: rgba(13, 27, 62, 0.8) !important;
+}
+
+/* ── Mobile nav ── */
+.nav-menu-3 {
+  background-color: var(--taj-navy) !important;
+}
+
+.dropdown-list-4 {
+  background-color: var(--taj-navy) !important;
+}
+
+.nav-link-3 {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.nav-link-3:hover {
+  color: var(--taj-blue-accent) !important;
+}
+
+/* ── Cookie Consent (if present) ── */
+.cc-window {
+  background-color: var(--taj-navy) !important;
+  border-color: var(--taj-blue-mid) !important;
+}
+
+.cc-btn {
+  background-color: var(--taj-blue-mid) !important;
+  color: var(--taj-white) !important;
+}
+
+/* ── Footer ── */
+.footer {
+  background-image: none !important;
+  background-color: var(--taj-white) !important;
+}
+
+.footer-left-block,
+.footer-right-block-item {
+  background-color: #1b3b68 !important;
+  color: var(--taj-white) !important;
+}
+
+.footer-left-block p,
+.footer-left-block a,
+.footer-right-block-item p,
+.footer-right-block-item a {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.footer-left-block a:hover,
+.footer-right-block-item a:hover {
+  color: var(--taj-white) !important;
+}
+
+.footer-left-block h3,
+.footer-right-block-item h3 {
+  color: var(--taj-white) !important;
+}
+
+.text-style-footer-bottom,
+.text-style-footer-bottom a,
+.text-style-footer-link-bottom {
+  color: #1b3b68 !important;
+}
+
+.footer-bottom-divider {
+  background-color: rgba(27, 59, 104, 0.2) !important;
+}
