@@ -1,4 +1,4 @@
-<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
+﻿<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="metisaerospace.com" data-wf-page="6894797fb9bec02f0702592c"
     data-wf-site="6893263d1e27013b67b77d36" lang="en" data-wf-collection="6894797fb9bec02f07025920"
     data-wf-item-slug="commercial-espionage">
@@ -53,6 +53,43 @@
 
     <link rel="stylesheet" href="../npm/swiper%4011.2.6/swiper-bundle.min.css" media="print"
         onload="this.media='all'; this.onload=null;">
+  <!-- Cookie Banner Brand Fix -->
+  <script>
+    (function() {
+      var brandName = 'THAL AKASH JAL';
+      function patchCookieBanner() {
+        var allText = document.querySelectorAll('p, span, div, h1, h2, h3, h4, h5, h6, li');
+        allText.forEach(function(el) {
+          if (el.childNodes.length > 0) {
+            el.childNodes.forEach(function(node) {
+              if (node.nodeType === 3 && node.textContent.includes('Metis Aerospace')) {
+                node.textContent = node.textContent.replace(/Metis Aerospace/g, brandName);
+              }
+            });
+          }
+        });
+      }
+      var observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          mutation.addedNodes.forEach(function(node) {
+            if (node.nodeType === 1) {
+              var texts = node.querySelectorAll ? node.querySelectorAll('p, span, div, h4, h2') : [];
+              texts.forEach(function(el) {
+                if (el.innerHTML && el.innerHTML.includes('Metis Aerospace')) {
+                  el.innerHTML = el.innerHTML.replace(/Metis Aerospace/g, brandName);
+                }
+              });
+              if (node.innerHTML && node.innerHTML.includes && node.innerHTML.includes('Metis Aerospace')) {
+                node.innerHTML = node.innerHTML.replace(/Metis Aerospace/g, brandName);
+              }
+            }
+          });
+        });
+      });
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      document.addEventListener('DOMContentLoaded', patchCookieBanner);
+    })();
+  </script>
 </head>
 
 <body class="body">
