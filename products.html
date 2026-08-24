@@ -3,15 +3,15 @@
 <head>
   <meta charset="utf-8">
   <link href="https://cdn.prod.website-files.com" rel="preconnect" crossorigin="anonymous">
-  <title>Industries We Serve | THAL AKASH JAL</title>
-  <meta name="description" content="THAL AKASH JAL delivers specialized consulting and advisory solutions across defence, government, manufacturing, marine, logistics, technology, and more.">
-  <meta property="og:title" content="Industries We Serve | THAL AKASH JAL">
-  <meta property="og:description" content="Delivering specialized solutions across industries through technology, expertise, and innovation.">
+  <title>Our Products | THAL AKASH JAL</title>
+  <meta name="description" content="Explore our comprehensive range of specialized products including military-grade fuel canisters, mobile fuel storage, and solar-powered stations.">
+  <meta property="og:title" content="Our Products | THAL AKASH JAL">
+  <meta property="og:description" content="Explore our comprehensive range of specialized products including military-grade fuel canisters, mobile fuel storage, and solar-powered stations.">
   <meta property="og:type" content="website">
   <meta name="twitter:title" content="Industries We Serve | THAL AKASH JAL">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://www.thalakashjal.com/industries">
+  <link rel="canonical" href="https://www.thalakashjal.com/products">
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <link href="6893263d1e27013b67b77d36/css/metis-aerospace.shared.9b8470c22.min.css" rel="stylesheet" type="text/css" crossorigin="anonymous">
   <link href="about-us-theme.css" rel="stylesheet" type="text/css">
@@ -274,15 +274,14 @@
           <div class="spacer__main"></div>
           <div class="expertise__hero-wrapper">
             <div class="colour__white">
-              <p class="text-style-solution-subheading industries-reveal" >Sector Focus</p>
-              <h1 class="industries-reveal">Industries We Serve</h1>
+              <p class="text-style-solution-subheading industries-reveal" style="color: white !important;">Product Range</p>
+              <h1 class="industries-reveal">Our Products</h1>
             </div>
             <div class="colour__white">
               <div class="max-width-540px">
-                <p class="text-style-large all-caps industries-reveal">Delivering specialized solutions across industries through technology, expertise, and innovation.</p>
+                <p class="text-style-large all-caps industries-reveal">Explore our comprehensive range of specialized products including military-grade fuel canisters, mobile fuel storage, and solar-powered stations.</p>
               </div>
             </div>
-            
           </div>
           <div class="spacer__4"></div>
           <div class="spacer__main"></div>
@@ -295,8 +294,171 @@
           <div class="spacer__2"></div>
           <div class="spacer__main"></div>
           <div class="industries-content-wrapper">
-            <div class="industries-grid" id="industries-grid"></div>
-            <div class="industries-detail" id="industries-detail"></div>
+            <style>
+              .products-grid-custom {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 32px;
+              }
+              @media screen and (max-width: 991px) {
+                .products-grid-custom {
+                  grid-template-columns: 1fr;
+                }
+              }
+              .product-item {
+                background: #ffffff;
+                border: 1px solid rgba(26, 58, 107, 0.12);
+                border-radius: 12px;
+                padding: 40px 32px;
+                transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                overflow: hidden;
+              }
+              .product-item:hover {
+                transform: translateY(-8px);
+                box-shadow: 0 20px 48px rgba(13, 27, 62, 0.08);
+                border-color: rgba(74, 144, 217, 0.2);
+              }
+              .product-item::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 4px;
+                height: 100%;
+                background: linear-gradient(180deg, #e85d2a 0%, #4a90d9 100%);
+                opacity: 0;
+                transition: opacity 0.4s ease;
+              }
+              .product-item:hover::before {
+                opacity: 1;
+              }
+              .product-header-custom {
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 20px;
+                border-bottom: 1px solid rgba(26, 58, 107, 0.06);
+                padding-bottom: 20px;
+              }
+              .product-icon-container {
+                width: 54px;
+                height: 54px;
+                border-radius: 12px;
+                background: rgba(232, 93, 42, 0.08);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: #e85d2a;
+                flex-shrink: 0;
+              }
+              .product-icon-container i {
+                width: 24px;
+                height: 24px;
+              }
+              .product-title-custom {
+                font-size: 20px;
+                font-weight: 700;
+                color: #1a3a6b;
+                margin: 0;
+                line-height: 1.3;
+                letter-spacing: -0.2px;
+              }
+              .product-desc-custom {
+                font-size: 15px;
+                color: #4a5b7d;
+                margin-bottom: 28px;
+                line-height: 1.6;
+                font-weight: 500;
+              }
+              .product-features-list {
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                display: flex;
+                flex-direction: column;
+                gap: 14px;
+                flex-grow: 1;
+              }
+              .product-feature-row {
+                display: flex;
+                align-items: flex-start;
+                gap: 12px;
+                font-size: 15px;
+                color: #1a2744;
+                line-height: 1.5;
+              }
+              .product-feature-row i {
+                width: 18px;
+                height: 18px;
+                color: #4a90d9;
+                flex-shrink: 0;
+                margin-top: 2px;
+              }
+            </style>
+
+            
+            <div class="products-grid-custom">
+
+              <div class="product-item industries-reveal">
+                <div style="height: 220px; background-image: url('6894797e8f5bfe4f60e90a52/68b81f69847b2831e8b53479_metis_theia_final_1-p-1600.webp'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 24px;"></div>
+                <h3 class="product-title-custom" style="margin-bottom: 12px; font-size:22px;">Military Fuel Canister</h3>
+                <p class="product-desc-custom" style="margin-bottom: 24px; flex-grow: 1; font-size:16px;">A military-grade fuel can built with explosion-suppression technology.</p>
+                <a href="products/military-fuel-canister.html" class="button white-background w-button" style="text-align: center; width: 100%; border: 1px solid rgba(26, 58, 107, 0.1); border-radius: 8px;">Read More</a>
+              </div>
+
+              <div class="product-item industries-reveal">
+                <div style="height: 220px; background-image: url('6894797e8f5bfe4f60e90a52/68b81f69847b2831e8b53479_metis_theia_final_1-p-1600.webp'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 24px;"></div>
+                <h3 class="product-title-custom" style="margin-bottom: 12px; font-size:22px;">Stackable Mobile Fuel Container</h3>
+                <p class="product-desc-custom" style="margin-bottom: 24px; flex-grow: 1; font-size:16px;">Lightweight, stackable mobile fuel container.</p>
+                <a href="products/stackable-mobile-fuel-container.html" class="button white-background w-button" style="text-align: center; width: 100%; border: 1px solid rgba(26, 58, 107, 0.1); border-radius: 8px;">Read More</a>
+              </div>
+
+              <div class="product-item industries-reveal">
+                <div style="height: 220px; background-image: url('6894797e8f5bfe4f60e90a52/68b81f69847b2831e8b53479_metis_theia_final_1-p-1600.webp'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 24px;"></div>
+                <h3 class="product-title-custom" style="margin-bottom: 12px; font-size:22px;">Mobile Fuel Storage & Dispensing Unit</h3>
+                <p class="product-desc-custom" style="margin-bottom: 24px; flex-grow: 1; font-size:16px;">Mobile fuel storage, transport, and dispensing system.</p>
+                <a href="products/mobile-fuel-storage-dispensing-unit.html" class="button white-background w-button" style="text-align: center; width: 100%; border: 1px solid rgba(26, 58, 107, 0.1); border-radius: 8px;">Read More</a>
+              </div>
+
+              <div class="product-item industries-reveal">
+                <div style="height: 220px; background-image: url('6894797e8f5bfe4f60e90a52/68b81f69847b2831e8b53479_metis_theia_final_1-p-1600.webp'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 24px;"></div>
+                <h3 class="product-title-custom" style="margin-bottom: 12px; font-size:22px;">ISO Fuel Storage Container</h3>
+                <p class="product-desc-custom" style="margin-bottom: 24px; flex-grow: 1; font-size:16px;">Large-scale ISO-compliant bulk storage tank.</p>
+                <a href="products/iso-fuel-storage-container.html" class="button white-background w-button" style="text-align: center; width: 100%; border: 1px solid rgba(26, 58, 107, 0.1); border-radius: 8px;">Read More</a>
+              </div>
+
+              <div class="product-item industries-reveal">
+                <div style="height: 220px; background-image: url('6894797e8f5bfe4f60e90a52/68b81f69847b2831e8b53479_metis_theia_final_1-p-1600.webp'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 24px;"></div>
+                <h3 class="product-title-custom" style="margin-bottom: 12px; font-size:22px;">Mobile Fuel Skid System</h3>
+                <p class="product-desc-custom" style="margin-bottom: 24px; flex-grow: 1; font-size:16px;">Skid-mounted mobile fuel storage and dispensing (1KL).</p>
+                <a href="products/mobile-fuel-skid-system.html" class="button white-background w-button" style="text-align: center; width: 100%; border: 1px solid rgba(26, 58, 107, 0.1); border-radius: 8px;">Read More</a>
+              </div>
+
+              <div class="product-item industries-reveal">
+                <div style="height: 220px; background-image: url('6894797e8f5bfe4f60e90a52/68b81f69847b2831e8b53479_metis_theia_final_1-p-1600.webp'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 24px;"></div>
+                <h3 class="product-title-custom" style="margin-bottom: 12px; font-size:22px;">Explosion-Resistant Fuel Station</h3>
+                <p class="product-desc-custom" style="margin-bottom: 24px; flex-grow: 1; font-size:16px;">Explosion-resistant mobile fuel solution.</p>
+                <a href="products/explosion-resistant-fuel-station.html" class="button white-background w-button" style="text-align: center; width: 100%; border: 1px solid rgba(26, 58, 107, 0.1); border-radius: 8px;">Read More</a>
+              </div>
+
+              <div class="product-item industries-reveal">
+                <div style="height: 220px; background-image: url('6894797e8f5bfe4f60e90a52/68b81f69847b2831e8b53479_metis_theia_final_1-p-1600.webp'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 24px;"></div>
+                <h3 class="product-title-custom" style="margin-bottom: 12px; font-size:22px;">Solar-Powered Fuel Station</h3>
+                <p class="product-desc-custom" style="margin-bottom: 24px; flex-grow: 1; font-size:16px;">Solar-powered fuel solution with explosion protection.</p>
+                <a href="products/solar-powered-fuel-station.html" class="button white-background w-button" style="text-align: center; width: 100%; border: 1px solid rgba(26, 58, 107, 0.1); border-radius: 8px;">Read More</a>
+              </div>
+
+              <div class="product-item industries-reveal">
+                <div style="height: 220px; background-image: url('6894797e8f5bfe4f60e90a52/68b81f69847b2831e8b53479_metis_theia_final_1-p-1600.webp'); background-size: cover; background-position: center; border-radius: 8px; margin-bottom: 24px;"></div>
+                <h3 class="product-title-custom" style="margin-bottom: 12px; font-size:22px;">Portable Fuel Storage Station</h3>
+                <p class="product-desc-custom" style="margin-bottom: 24px; flex-grow: 1; font-size:16px;">Above-ground, easily transportable fuel station or storage.</p>
+                <a href="products/portable-fuel-storage-station.html" class="button white-background w-button" style="text-align: center; width: 100%; border: 1px solid rgba(26, 58, 107, 0.1); border-radius: 8px;">Read More</a>
+              </div>
+            </div>
+</div>
           </div>
           <div class="spacer__main"></div>
         </div>
@@ -313,7 +475,7 @@
                 <div class="expertise__icon-line"></div>
               </div>
               <h2>Get In Touch Today</h2>
-              <p>Whatever your industry, our trusted experts are ready to guide you towards operational excellence and sustainable growth.</p>
+              <p>Interested in our products? Our trusted experts are ready to guide you towards operational excellence and sustainable growth.</p>
               <a href="contact.html" class="button white-background w-button" style="margin-top:20px;">Talk to Us</a>
               <div class="spacer__2"></div>
               <div class="expertise__icon-wrapper">
@@ -346,8 +508,7 @@
           <div class="expertise__quote-radar"><img src="6893263d1e27013b67b77d36/68948b8354b35cc38c8a9feb_Quote%20Radar.svg" loading="lazy" alt="" class="image"></div>
         </div>
       </div>
-
-      <div data-w-id="5f665b38-6c9c-f7d6-e5a1-ac5999256cdf" class="footer">
+<div data-w-id="5f665b38-6c9c-f7d6-e5a1-ac5999256cdf" class="footer">
         <div class="footer-contain">
           <div class="spacer__footer"></div>
           <div class="footer-wrapper">
@@ -462,6 +623,30 @@
   <script src="6893263d1e27013b67b77d36/js/metis-aerospace.477dcc4f.d7172543836f817e.js" type="text/javascript" crossorigin="anonymous"></script>
   <script src="npm/swiper%4011.2.6/swiper-bundle.min.js"></script>
   <script src="metis.js"></script>
-  <script src="industries.js"></script>
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      initReveal();
+    });
+    if (document.readyState === 'interactive' || document.readyState === 'complete') {
+      initReveal();
+    }
+    function initReveal() {
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      
+      var reveals = document.querySelectorAll('.industries-reveal');
+      reveals.forEach(function(el) {
+        observer.observe(el);
+      });
+    }
+  </script>
 </body>
 </html>
