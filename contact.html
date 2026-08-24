@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="metisaerospace.com" data-wf-page="689b0596a930eaca4ae89f44"
     data-wf-site="6893263d1e27013b67b77d36" lang="en">
 
@@ -59,7 +59,7 @@
         var els = (root || document).querySelectorAll ? (root || document).querySelectorAll('div,section,aside') : [];
         for (var i = 0; i < els.length; i++) {
           var el = els[i];
-          if (el.innerText && (el.innerText.indexOf('About Cookies') !== -1 || el.innerText.indexOf('use cookies') !== -1 || el.innerText.indexOf('Cookie settings') !== -1)) {
+          if (el.innerText && el.innerText.length < 500 && (el.innerText.indexOf('About Cookies') !== -1 || el.innerText.indexOf('use cookies') !== -1 || el.innerText.indexOf('Cookie settings') !== -1)) {
             var target = el;
             while (target.parentElement && target.parentElement !== document.body && target.parentElement.children.length === 1) {
               target = target.parentElement;
@@ -75,7 +75,7 @@
           for (var j = 0; j < added.length; j++) {
             if (added[j].nodeType === 1) {
               var el = added[j];
-              if (el.innerText && (el.innerText.indexOf('About Cookies') !== -1 || el.innerText.indexOf('use cookies') !== -1 || el.innerText.indexOf('Cookie settings') !== -1)) {
+              if (el.innerText && el.innerText.length < 500 && (el.innerText.indexOf('About Cookies') !== -1 || el.innerText.indexOf('use cookies') !== -1 || el.innerText.indexOf('Cookie settings') !== -1)) {
                 var target = el;
                 while (target.parentElement && target.parentElement !== document.body && target.parentElement.children.length === 1) {
                   target = target.parentElement;
@@ -93,6 +93,8 @@
       document.addEventListener('DOMContentLoaded', function() { removeCookieBanner(document.body); });
     })();
   </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>document.addEventListener("DOMContentLoaded",function(){if(typeof lucide!=="undefined")lucide.createIcons();});window.addEventListener("load",function(){if(typeof lucide!=="undefined")lucide.createIcons();});</script>
 </head>
 
 <body class="body">
@@ -132,33 +134,47 @@
                         </div>
                         <div id="w-node-cee4ea34-345f-c53b-c382-6e4c1d7919d6-1d933b21" class="w-dyn-list">
                           <div role="list" class="megamenu__expertise-links w-dyn-items">
-                            <div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/strategic-advisory.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Strategic Advisory</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/logistics-supply-chain.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Supply Chain Consulting</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/procurement-contract-management.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Procurement Management</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/gem-advisory.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">GeM Advisory</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/warehouse-management.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Warehouse Optimization</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/human-capital-workforce.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Workforce Analytics</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/outsourced-business-management.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Business Management</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/marine-aqua-tourism.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Marine Tourism</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/technology-transfer.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Technology Transfer</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/strategic-liaison.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Strategic Liaison</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/field-trial-management.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Field Trial Management</p></a></div>
-<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/specification-review.html" class="megamenu__link-item w-inline-block"><img src="6893263d1e27013b67b77d36/689378e7cc9f5139e3ec255a_Polygon%2017.svg" loading="lazy" alt=""><p class="text-style-nav">Specification Review</p></a></div>
+                            <div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/strategic-advisory.html" class="megamenu__link-item w-inline-block"><i data-lucide="compass" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Strategic Advisory</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/logistics-supply-chain.html" class="megamenu__link-item w-inline-block"><i data-lucide="route" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Supply Chain Consulting</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/procurement-contract-management.html" class="megamenu__link-item w-inline-block"><i data-lucide="shopping-cart" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Procurement Management</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/gem-advisory.html" class="megamenu__link-item w-inline-block"><i data-lucide="landmark" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">GeM Advisory</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/warehouse-management.html" class="megamenu__link-item w-inline-block"><i data-lucide="warehouse" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Warehouse Optimization</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/human-capital-workforce.html" class="megamenu__link-item w-inline-block"><i data-lucide="users" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Workforce Analytics</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/outsourced-business-management.html" class="megamenu__link-item w-inline-block"><i data-lucide="briefcase-business" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Business Management</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/marine-aqua-tourism.html" class="megamenu__link-item w-inline-block"><i data-lucide="ship" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Marine Tourism</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/technology-transfer.html" class="megamenu__link-item w-inline-block"><i data-lucide="arrow-right-left" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Technology Transfer</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/strategic-liaison.html" class="megamenu__link-item w-inline-block"><i data-lucide="handshake" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Strategic Liaison</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/field-trial-management.html" class="megamenu__link-item w-inline-block"><i data-lucide="clipboard-check" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Field Trial Management</p></a></div>
+<div role="listitem" class="w-dyn-item"><a data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919d7" href="services/specification-review.html" class="megamenu__link-item w-inline-block"><i data-lucide="file-check-2" style="width: 18px; height: 18px; color: #e85d2a; flex-shrink: 0;"></i>
+<p class="text-style-nav">Specification Review</p></a></div>
 </div>
                         </div>
                       </div>
                     </div>
                   </nav>
                 </div>
-                <a href="the-team.html" class="text-style-nav mx-17">The Team</a>
+                <a href="industries.html" class="text-style-nav mx-17">Industries</a>
+<a href="the-team.html" class="text-style-nav mx-17">Our Expertise</a>
+<a href="careers.html" class="text-style-nav mx-17">Careers</a>
               </div>
-              <div class="contact mobile"><a href="#" class="button-2 navbar w-button">Contact Us</a></div>
+              <div class="contact mobile"><a href="#" class="button-2 navbar w-button">Partnership &amp; Contacts</a></div>
             </nav>
             <div class="contact"><a data-w-id="61163a2f-005b-6c43-a0cf-e3f01d933c13" href="contact.html"
                 class="button-wrapper w-inline-block">
                 <div class="button-gradient"></div>
                 <div class="button-text-wrapper">
-                  <p class="button-text">Talk to Us</p>
+                  <p class="button-text">Partnership &amp; Contacts</p>
                 </div>
               </a></div>
             <div data-w-id="61163a2f-005b-6c43-a0cf-e3f01d933c18" class="menu-button-2 w-nav-button">
@@ -209,7 +225,9 @@
                       </nav>
                     </div>
                   </li>
-                  <li class="nav-list-item no-padding"><a href="the-team.html" class="text-style-nav mx-17">The Team</a></li>
+                  <li class="nav-list-item no-padding"><a href="industries.html" class="text-style-nav mx-17">Industries</a>
+<a href="the-team.html" class="text-style-nav mx-17">Our Expertise</a>
+<a href="careers.html" class="text-style-nav mx-17">Careers</a></li>
 
                 </ul>
               </nav>
@@ -275,40 +293,27 @@
                                 <div class="error-message w-form-fail">
                                     <p class="mb-0">There has been an error with your form submission, please refresh
                                         the page and try again or alternatively email us at <a
-                                            href="mailto:info@tajdefence.com">info@tajdefence.com</a>
+                                            href="mailto:admin@thalakashjal.com">admin@thalakashjal.com</a>
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div data-w-id="41b5cbff-8d69-eb90-1c2f-4c7cdf4ed0e6" class="contact__address-wrapper">
-                            <div data-w-id="41b5cbff-8d69-eb90-1c2f-4c7cdf4ed0e7" style="opacity:0"
+                            <div data-w-id="41b5cbff-8d69-eb90-1c2f-4c7cdf4ed0e7" style="opacity:0; grid-row-gap: 1.5rem;"
                                 class="contact__address-content">
                                 <div class="text__arrow-wrapper"><img
                                         src="6893263d1e27013b67b77d36/6899cf307147b1d35875c7fc_Blue%20Arrow.svg"
                                         loading="lazy" alt="" class="arrow__accreditations">
                                     <h2 class="style__h3 my-0">Where to Find us</h2>
                                 </div>
-                                <p class="mb-0">Office No. 11, Manorama Chambers,<br>S.V. Road, Bandra West,<br>Mumbai – 400050<br>Maharashtra, India</p>
-                                <p class="mb-0">+91 93103 15950</p><a href="mailto:info@tajdefence.com"
-                                    class="text-break-all">info@tajdefence.com</a>
-                                <div class="contact__follow-us-links-wrapper">
-                                    <p class="mb-0">Follow Us:</p>
-                                    <div class="follow__us-links-wrapper"><a aria-label="Linkedin"
-                                            rel="noopener, noreferrer, nofollow"
-                                            href="#" target="_blank"
-                                            class="social__link w-inline-block"><img
-                                                src="6893263d1e27013b67b77d36/689b1727a688cfc91ab218b8_Linkedin.svg"
-                                                loading="lazy" width="25" alt="" class="social__logo"></a><a
-                                            aria-label="Instagram" rel="noopener, noreferrer, nofollow"
-                                            href="#" target="_blank"
-                                            class="social__link w-inline-block"><img
-                                                src="6893263d1e27013b67b77d36/689b1727dcb31c5fac9cdce3_Instagram.svg"
-                                                loading="lazy" width="25" alt="" class="social__logo"></a><a
-                                            aria-label="X" rel="noopener, noreferrer, nofollow"
-                                            href="#" target="_blank"
-                                            class="social__link w-inline-block"><img
-                                                src="6893263d1e27013b67b77d36/689b172710e2e117004ed0cc_X.svg"
-                                                loading="lazy" width="25" alt="" class="social__logo"></a></div>
+                                <div>
+                                    <strong style="display:block; margin-bottom:0.5rem; font-size:1.125rem; color:#0e1f3b;">Address:</strong>
+                                    <p class="mb-0">Office No. 11, Manorama Chambers,<br>S.V. Road, Bandra West,<br>Mumbai – 400050<br>Maharashtra, India</p>
+                                </div>
+                                <div>
+                                    <strong style="display:block; margin-bottom:0.5rem; font-size:1.125rem; color:#0e1f3b;">Contact Mail:</strong>
+                                    <a href="mailto:admin@thalakashjal.com"
+                                        class="text-break-all">admin@thalakashjal.com</a>
                                 </div>
                             </div>
                         </div>
@@ -327,8 +332,8 @@
                 <h3 class="my-0">Where To Find Us</h3>
               </div>
               <div class="text-wrapper">
-                <p class="mb-0">Corporate Office<br>Office No. 11, Manorama Chambers<br>S.V. Road, Bandra West<br>Mumbai – 400050</p><a href="tel:+919310315950">+91 93103 15950</a><a
-                  href="mailto:info@tajdefence.com" class="text-word-wrap">info@tajdefence.com</a>
+                <p class="mb-0">Corporate Office<br>Office No. 11, Manorama Chambers<br>S.V. Road, Bandra West<br>Mumbai – 400050</p><a
+                  href="mailto:admin@thalakashjal.com" class="text-word-wrap">admin@thalakashjal.com</a>
               </div>
             </div>
             <div class="footer__divider-wrapper">
