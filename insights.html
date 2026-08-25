@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="metisaerospace.com" data-wf-page="689b387e9301b0aaf383d858"
     data-wf-site="6893263d1e27013b67b77d36" lang="en">
 
@@ -85,6 +85,56 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>document.addEventListener("DOMContentLoaded",function(){if(typeof lucide!=="undefined")lucide.createIcons();});window.addEventListener("load",function(){if(typeof lucide!=="undefined")lucide.createIcons();});</script>
+<style>
+/* Custom navbar overlay styles */
+.navbar-wrapper {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent !important;
+}
+/* Ensure the navbar is transparent at the top but solid navy when scrolled */
+.navbar:not(.scrolled), .navbar-mobile:not(.scrolled) {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+}
+.navbar.scrolled, .navbar-mobile.scrolled {
+    background-color: var(--taj-navy, #0d1b3e) !important;
+    transition: background-color 0.3s ease;
+}
+.navbar-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var navbar = document.querySelector('.navbar');
+    var mobileNavbar = document.querySelector('.navbar-mobile');
+    
+    function updateScroll() {
+        if (window.scrollY > 50) {
+            if (navbar) navbar.classList.add('scrolled');
+            if (mobileNavbar) mobileNavbar.classList.add('scrolled');
+        } else {
+            if (navbar) navbar.classList.remove('scrolled');
+            if (mobileNavbar) mobileNavbar.classList.remove('scrolled');
+        }
+    }
+    
+    window.addEventListener('scroll', updateScroll);
+    updateScroll(); /* initialize on load */
+});
+</script>
 </head>
 
 <body class="body">
@@ -267,7 +317,7 @@
                                 class="insights__card">
                                 <div class="insights__card-overlay"></div>
                                 <div class="insights__card-text">
-                                    <h2 class="style__h3 no-upper">THALAKASHJAL wins Â£30 million KONGSBERG contract for its
+                                    <h2 class="style__h3 no-upper">THALAKASHJAL wins £30 million KONGSBERG contract for its
                                         SKYPERION Lightweight</h2><a
                                         href="news/metis-wins-ps30-million-kongsberg-contract-for-its-skyperion-lightweight.html"
                                         class="button w-button">Read Article</a>
@@ -431,7 +481,7 @@
                                 class="insights__card">
                                 <div class="insights__card-overlay"></div>
                                 <div class="insights__card-text">
-                                    <h2 class="style__h3 no-upper">Itâ€™s Our Birthday!</h2><a
+                                    <h2 class="style__h3 no-upper">It’s Our Birthday!</h2><a
                                         href="news/its-our-birthday.html" class="button w-button">Read Article</a>
                                 </div>
                             </div>
@@ -498,7 +548,7 @@
                 <h3 class="my-0">Where To Find Us</h3>
               </div>
               <div class="text-wrapper">
-                <p class="mb-0">Corporate Office<br>Office No. 11, Manorama Chambers<br>S.V. Road, Bandra West<br>Mumbai â€“ 400050</p><a
+                <p class="mb-0">Corporate Office<br>Office No. 11, Manorama Chambers<br>S.V. Road, Bandra West<br>Mumbai – 400050</p><a
                   href="mailto:admin@thalakashjal.com" class="text-word-wrap">admin@thalakashjal.com</a>
               </div>
             </div>
@@ -565,7 +615,7 @@
           <div class="footer-bottom-divider"></div>
           <div class="footer__bottom-links">
             <div class="footer__bottom-left-links">
-              <p class="text-style-footer-bottom">Â© 2026 THAL AKASH JAL DEFENCE TECHNOLOGIES PVT. LTD. | All Rights Reserved | Designed by <a href="https://www.makewithus.in" target="_blank"> makewithus</a></p>
+              <p class="text-style-footer-bottom">© 2026 THAL AKASH JAL DEFENCE TECHNOLOGIES PVT. LTD. | All Rights Reserved | Designed by <a href="https://www.makewithus.in" target="_blank"> makewithus</a></p>
             </div>
             <div class="footer__bottom-right-links"><a href="privacy-policy.html"
                 class="text-style-footer-link-bottom">Privacy Policy</a>
@@ -586,7 +636,7 @@
     <script src="6893263d1e27013b67b77d36/js/metis-aerospace.schunk.521e1701bf9daf9a.js" type="text/javascript"
         crossorigin="anonymous"></script>
     <script src="6893263d1e27013b67b77d36/js/metis-aerospace.477dcc4f.d7172543836f817e.js" type="text/javascript"
-         crossorigin="anonymous"></script>â€
+         crossorigin="anonymous"></script>?
     <script src="npm/swiper%4011.2.6/swiper-bundle.min.js"></script>
 
     <script src="metis.js"></script>

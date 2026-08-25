@@ -1,4 +1,4 @@
-ï»¿<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="metisaerospace.com" data-wf-page="6893263d1e27013b67b77d3c"
   data-wf-site="6893263d1e27013b67b77d36" lang="en">
 
@@ -101,6 +101,56 @@
   </script>
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>document.addEventListener("DOMContentLoaded", function () { if (typeof lucide !== "undefined") lucide.createIcons(); }); window.addEventListener("load", function () { if (typeof lucide !== "undefined") lucide.createIcons(); });</script>
+<style>
+/* Custom navbar overlay styles */
+.navbar-wrapper {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: transparent !important;
+}
+/* Ensure the navbar is transparent at the top but solid navy when scrolled */
+.navbar:not(.scrolled), .navbar-mobile:not(.scrolled) {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+}
+.navbar.scrolled, .navbar-mobile.scrolled {
+    background-color: var(--taj-navy, #0d1b3e) !important;
+    transition: background-color 0.3s ease;
+}
+.navbar-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%);
+    z-index: -1;
+    pointer-events: none;
+}
+</style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var navbar = document.querySelector('.navbar');
+    var mobileNavbar = document.querySelector('.navbar-mobile');
+    
+    function updateScroll() {
+        if (window.scrollY > 50) {
+            if (navbar) navbar.classList.add('scrolled');
+            if (mobileNavbar) mobileNavbar.classList.add('scrolled');
+        } else {
+            if (navbar) navbar.classList.remove('scrolled');
+            if (mobileNavbar) mobileNavbar.classList.remove('scrolled');
+        }
+    }
+    
+    window.addEventListener('scroll', updateScroll);
+    updateScroll(); /* initialize on load */
+});
+</script>
 </head>
 
 <body class="body">
@@ -377,7 +427,7 @@
                 src="6893263d1e27013b67b77d36/689472a143e469fbaf8a6136_Union.svg" loading="lazy" alt="">
               <h2 class="style__h3">Why Choose Us</h2>
               <p>THALAKASHJAL is a leading advisory and strategic consulting firm specializing in defence, government,
-                and commercial sectors. Operating under the banner of TAJ â€” Connecting Bharat with India, we bridge the
+                and commercial sectors. Operating under the banner of TAJ — Connecting Bharat with India, we bridge the
                 gap between regional capabilities and national opportunities, empowering organizations to thrive in
                 complex operational environments.</p>
               <p>Founded by Armed Forces veterans, our leadership team brings over 200 years of combined experience
@@ -719,8 +769,8 @@
             <h2 data-w-id="ce0a3dec-7818-5bc1-f511-ef1df619ab91" style="opacity:0">Get In Touch Today</h2>
             <div class="max-width-900px">
               <p data-w-id="1f823ee7-beb8-646b-50c0-5a648c1c3c94" style="opacity:0">Whatever your requirements, why not
-                let our trusted experts guide you towards a more secure future? Weâ€™re ready to respond to your needs at
-                a momentâ€™s notice.</p>
+                let our trusted experts guide you towards a more secure future? We’re ready to respond to your needs at
+                a moment’s notice.</p>
             </div><a data-w-id="7f5dc4f1-46fb-695a-4061-5ac3b4a7ef86" style="opacity:0" href="contact.html"
               class="button-wrapper w-inline-block">
               <div style="width:0%;opacity:0" class="button-gradient"></div>
@@ -781,7 +831,7 @@
               </div>
               <div class="text-wrapper">
                 <p class="mb-0">Corporate Office<br>Office No. 11, Manorama Chambers<br>S.V. Road, Bandra West<br>Mumbai
-                  â€“ 400050</p><a href="mailto:admin@thalakashjal.com" class="text-word-wrap">admin@thalakashjal.com</a>
+                  – 400050</p><a href="mailto:admin@thalakashjal.com" class="text-word-wrap">admin@thalakashjal.com</a>
               </div>
             </div>
             <div class="footer__divider-wrapper">
@@ -864,7 +914,7 @@
           <div class="footer-bottom-divider"></div>
           <div class="footer__bottom-links">
             <div class="footer__bottom-left-links">
-              <p class="text-style-footer-bottom">Â© 2026 THAL AKASH JAL DEFENCE TECHNOLOGIES PVT. LTD. | All Rights
+              <p class="text-style-footer-bottom">© 2026 THAL AKASH JAL DEFENCE TECHNOLOGIES PVT. LTD. | All Rights
                 Reserved | Designed by <a href="https://www.makewithus.in" target="_blank"> makewithus</a></p>
             </div>
             <div class="footer__bottom-right-links"><a href="privacy-policy.html"
