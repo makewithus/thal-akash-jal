@@ -292,3 +292,75 @@
 .footer-bottom-divider {
   background-color: rgba(27, 59, 104, 0.2) !important;
 }
+
+/* ── Desktop Navbar Layout & Alignment Fix ── */
+.navigation {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+@media screen and (min-width: 992px) {
+  .nav__desktop {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+  }
+
+  .nav__desktop .text-style-nav,
+  .nav__desktop .nav__link {
+    white-space: nowrap !important;
+  }
+
+  .nav__desktop .text-style-nav.mx-17 {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    font-size: 16px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown .text-style-nav {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav__desktop .text-style-nav.mx-17 {
+    margin-left: 14px !important;
+    margin-right: 14px !important;
+    font-size: 18px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown {
+    margin-left: 14px !important;
+    margin-right: 14px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown .text-style-nav {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .nav__desktop .text-style-nav.mx-17 {
+    margin-left: 17px !important;
+    margin-right: 17px !important;
+    font-size: 20px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown {
+    margin-left: 17px !important;
+    margin-right: 17px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown .text-style-nav {
+    font-size: 20px !important;
+  }
+}
+

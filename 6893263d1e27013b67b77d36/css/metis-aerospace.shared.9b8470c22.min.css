@@ -2769,7 +2769,12 @@ blockquote {
     border-bottom: 2px solid var(--metis-light);
     flex: 0 auto;
     padding-top: 1rem;
-    padding-bottom: 1rem
+    padding-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    white-space: nowrap
 }
 
 .megamenu__dropdown-wrapper {
@@ -2797,6 +2802,7 @@ blockquote {
 .navigation {
     flex: 1;
     justify-content: space-between;
+    align-items: center;
     display: flex
 }
 
