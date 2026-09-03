@@ -367,6 +367,200 @@
     font-size: 20px !important;
   }
 
+/* ── CTA image section ── */
+.expertise__card-solution-img {
+  border-color: var(--taj-blue-mid) !important;
+}
+
+
+
+/* ── Trusted-by Carousel Section ── */
+.section.trusted-by {
+  background-color: var(--taj-white) !important;
+}
+
+/* ── Megamenu Dropdown ── */
+.megamenu__dropdown-wrapper {
+  background-color: var(--taj-navy) !important;
+}
+
+.megamenu__heading {
+  color: var(--taj-white) !important;
+}
+
+.megamenu__divider {
+  background-color: var(--taj-blue-accent) !important;
+}
+
+.megamenu__link-item {
+  color: var(--taj-white) !important;
+}
+
+.megamenu__link-item:hover {
+  color: var(--taj-blue-accent) !important;
+}
+
+/* ── Solutions Radar BG element ── */
+.expertise__solutions-radar-wrapper {
+  opacity: 0.4;
+}
+
+/* ── Subheading Text (Company Profile label) ── */
+.text-style-solution-subheading {
+  color: var(--taj-blue-accent) !important;
+}
+
+/* ── Logo text in navbar ── */
+.logo-img {
+  color: white !important;
+}
+
+/* ── Navigation overlay ── */
+.nav-overlay {
+  background-color: rgba(13, 27, 62, 0.8) !important;
+}
+
+/* ── Mobile nav ── */
+.nav-menu-3 {
+  background-color: var(--taj-navy) !important;
+}
+
+.dropdown-list-4 {
+  background-color: var(--taj-navy) !important;
+}
+
+.nav-link-3 {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.nav-link-3:hover {
+  color: var(--taj-blue-accent) !important;
+}
+
+/* ── Cookie Consent (if present) ── */
+.cc-window {
+  background-color: var(--taj-navy) !important;
+  border-color: var(--taj-blue-mid) !important;
+}
+
+.cc-btn {
+  background-color: var(--taj-blue-mid) !important;
+  color: var(--taj-white) !important;
+}
+
+/* ── Footer ── */
+.footer {
+  background-image: none !important;
+  background-color: var(--taj-white) !important;
+}
+
+.footer-left-block,
+.footer-right-block-item {
+  background-color: #1b3b68 !important;
+  color: var(--taj-white) !important;
+}
+
+.footer-left-block p,
+.footer-left-block a,
+.footer-right-block-item p,
+.footer-right-block-item a {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.footer-left-block a:hover,
+.footer-right-block-item a:hover {
+  color: var(--taj-white) !important;
+}
+
+.footer-left-block h3,
+.footer-right-block-item h3 {
+  color: var(--taj-white) !important;
+}
+
+.text-style-footer-bottom,
+.text-style-footer-bottom a,
+.text-style-footer-link-bottom {
+  color: #1b3b68 !important;
+}
+
+.footer-bottom-divider {
+  background-color: rgba(27, 59, 104, 0.2) !important;
+}
+
+/* ── Products Dropdown Arrow Rotation ── */
+/* Match the Services dropdown arrow rotation behavior (driven by Webflow IX2)
+   by using the w--open class that Webflow adds when a dropdown is toggled */
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"] .nav__dropdown-triangle,
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"] .nav-dropdown-2 img {
+  transition: transform 0.3s ease;
+}
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"] .w-dropdown-toggle.w--open .nav__dropdown-triangle,
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"] .w-dropdown-toggle.w--open img,
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"].w-dropdown .w-dropdown-toggle.w--open img {
+  transform: rotate(180deg);
+}
+
+/* ── Desktop Navbar Layout & Alignment Fix ── */
+.navigation {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+@media screen and (min-width: 992px) {
+  .nav__desktop {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    flex-wrap: nowrap !important;
+    white-space: nowrap !important;
+  }
+
+  .nav__desktop .text-style-nav,
+  .nav__desktop .nav__link {
+    white-space: nowrap !important;
+  }
+
+  .nav__desktop .text-style-nav.mx-17 {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+    font-size: 16px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown {
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown .text-style-nav {
+    font-size: 16px !important;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .nav__desktop .text-style-nav.mx-17 {
+    margin-left: 14px !important;
+    margin-right: 14px !important;
+    font-size: 18px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown {
+    margin-left: 14px !important;
+    margin-right: 14px !important;
+  }
+
+  .nav__desktop .nav__link.dropdown .text-style-nav {
+    font-size: 18px !important;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .nav__desktop .text-style-nav.mx-17 {
+    margin-left: 17px !important;
+    margin-right: 17px !important;
+    font-size: 20px !important;
+  }
+
   .nav__desktop .nav__link.dropdown {
     margin-left: 17px !important;
     margin-right: 17px !important;
@@ -376,4 +570,3 @@
     font-size: 20px !important;
   }
 }
-

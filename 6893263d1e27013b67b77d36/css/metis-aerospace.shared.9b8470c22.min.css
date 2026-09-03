@@ -6104,3 +6104,36 @@ blockquote {
         grid-area: span 1/span 1/span 1/span 1
     }
 }
+
+/* ── Global Fix: Mail Icon Visibility ── */
+.footer__heading-flexbox a {
+    color: inherit !important;
+}
+.footer__heading-flexbox [data-lucide="mail"] {
+    color: currentColor !important;
+}
+
+/* ── Global Fix: Mobile Navigation Menu (Mobview Only) ── */
+@media screen and (max-width: 991px) {
+  .nav-menu-3, .dropdown-list-4, .megamenu__dropdown-wrapper {
+    background-color: #0d1b3e !important;
+  }
+  .nav-link-3 {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  .nav-link-3:hover {
+    color: #4a90d9 !important;
+  }
+  .megamenu__heading, .megamenu__link-item, .megamenu__link-item p {
+    color: #ffffff !important;
+  }
+  .megamenu__link-item:hover, .megamenu__link-item:hover p {
+    color: #4a90d9 !important;
+  }
+  .megamenu__divider {
+    background-color: #4a90d9 !important;
+  }
+  .nav-overlay {
+    background-color: rgba(13, 27, 62, 0.8) !important;
+  }
+}
