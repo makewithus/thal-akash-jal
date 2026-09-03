@@ -293,6 +293,19 @@
   background-color: rgba(27, 59, 104, 0.2) !important;
 }
 
+/* ── Products Dropdown Arrow Rotation ── */
+/* Match the Services dropdown arrow rotation behavior (driven by Webflow IX2)
+   by using the w--open class that Webflow adds when a dropdown is toggled */
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"] .nav__dropdown-triangle,
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"] .nav-dropdown-2 img {
+  transition: transform 0.3s ease;
+}
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"] .w-dropdown-toggle.w--open .nav__dropdown-triangle,
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"] .w-dropdown-toggle.w--open img,
+[data-w-id="cee4ea34-345f-c53b-c382-6e4c1d7919ca"].w-dropdown .w-dropdown-toggle.w--open img {
+  transform: rotate(180deg);
+}
+
 /* ── Desktop Navbar Layout & Alignment Fix ── */
 .navigation {
   display: flex !important;
