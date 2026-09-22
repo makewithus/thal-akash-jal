@@ -1,4 +1,4 @@
-// ─── Mobile Scroll Freeze Fix — Intent-Tracking Approach ─────────────────────
+﻿// ─── Mobile Scroll Freeze Fix — Intent-Tracking Approach ─────────────────────
 //
 // WHY THE OLD FIX FAILED:
 //   metis.js is loaded last, synchronously, AFTER all Webflow chunks. By the
@@ -183,3 +183,48 @@ const metis = {
     },
   },
 };
+
+
+// -----------------------------------------------------------------------------
+// Navbar: hide on scroll-down, reveal on scroll-up (all pages)
+// -----------------------------------------------------------------------------
+(function () {
+  function initNavHide() {
+    var navbar = document.querySelector('.navbar');
+    var mobileNavbar = document.querySelector('.navbar-mobile');
+    if (!navbar && !mobileNavbar) return;
+
+    var lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', function () {
+      var currentScrollY = window.scrollY;
+
+      // Check if mobile menu is open - if it is, NEVER hide the navbar
+      var isMobileOpen = false;
+      if (mobileNavbar) {
+        var menuBtn = mobileNavbar.querySelector('.w-nav-button');
+        if (menuBtn && menuBtn.classList.contains('w--open')) {
+          isMobileOpen = true;
+        }
+      }
+
+      if (currentScrollY > lastScrollY && currentScrollY > 80 && !isMobileOpen) {
+        // Scrolling DOWN - hide
+        if (navbar) navbar.classList.add('nav-hidden');
+        if (mobileNavbar) mobileNavbar.classList.add('nav-hidden');
+      } else {
+        // Scrolling UP (or menu open) - reveal
+        if (navbar) navbar.classList.remove('nav-hidden');
+        if (mobileNavbar) mobileNavbar.classList.remove('nav-hidden');
+      }
+
+      lastScrollY = currentScrollY;
+    }, { passive: true });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavHide);
+  } else {
+    initNavHide();
+  }
+})();

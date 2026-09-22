@@ -1,4 +1,4 @@
-html {
+﻿html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     font-family: sans-serif
@@ -6136,4 +6136,11 @@ blockquote {
   .nav-overlay {
     background-color: rgba(13, 27, 62, 0.8) !important;
   }
+}
+/* Global navbar hide-on-scroll */
+.navbar.nav-hidden, .navbar-mobile.nav-hidden {
+    transform: translateY(-100%) !important;
+}
+.navbar, .navbar-mobile {
+    transition: transform 0.35s ease, background-color 0.3s ease !important;
 }
