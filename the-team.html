@@ -144,9 +144,25 @@ document.addEventListener("DOMContentLoaded", function() {
       <style>
         .megamenu__expertise-links {
           display: grid !important;
-          grid-template-columns: 1fr 1fr 1fr !important;
-          gap: 10px;
-          max-height: none !important; } .megamenu__expertise-links a, .megamenu__expertise-links p { white-space: normal !important; } @media screen and (max-width: 1100px) { .megamenu__expertise-links { grid-template-columns: 1fr 1fr !important; } } @media screen and (max-width: 767px) { .megamenu__expertise-links { grid-template-columns: 1fr !important; } }
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 12px 16px !important;
+          max-height: none !important;
+          overflow: visible !important;
+        }
+        .megamenu__expertise-links a, .megamenu__expertise-links p {
+          white-space: normal !important;
+          word-break: break-word !important;
+          overflow-wrap: break-word !important;
+        }
+        @media screen and (max-width: 1300px) and (min-width: 992px) {
+          .megamenu__content { padding-right: 2rem !important; }
+        }
+        @media screen and (max-width: 1250px) {
+          .megamenu__expertise-links { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media screen and (max-width: 767px) {
+          .megamenu__expertise-links { grid-template-columns: 1fr !important; }
+        }
       </style>
       <div data-w-id="61163a2f-005b-6c43-a0cf-e3f01d933b60" data-animation="default" data-collapse="small"
         data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
@@ -384,8 +400,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <div class="hero__wrapper">
             <div class="max-width-900px">
               <div class="colour__white">
-                <p data-w-id="993a6bc0-9580-2a31-05cb-1e336377e290" style="opacity:0"
-                  class="text-style-solution-subheading">Our Expertise</p>
+               
                 <h1 data-w-id="df936f7e-defb-f8a7-c796-d463c66def1c" style="opacity:0">Meet our defence
                   experts</h1>
               </div>

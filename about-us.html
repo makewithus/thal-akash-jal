@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
+<!DOCTYPE html><!-- Last Published: Fri Jun 12 2026 09:02:16 GMT+0000 (Coordinated Universal Time) -->
 <html data-wf-domain="thalakashjal.com" data-wf-page="68961359c8c6c5a189ac25e3"
     data-wf-site="6893263d1e27013b67b77d36" lang="en">
 
@@ -154,10 +154,26 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="navbar-wrapper">
       <style>
         .megamenu__expertise-links {
-            display: grid !important;
-            grid-template-columns: 1fr 1fr 1fr !important;
-            gap: 10px;
-            max-height: none !important; } .megamenu__expertise-links a, .megamenu__expertise-links p { white-space: normal !important; } @media screen and (max-width: 1100px) { .megamenu__expertise-links { grid-template-columns: 1fr 1fr !important; } } @media screen and (max-width: 767px) { .megamenu__expertise-links { grid-template-columns: 1fr !important; } }
+          display: grid !important;
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 12px 16px !important;
+          max-height: none !important;
+          overflow: visible !important;
+        }
+        .megamenu__expertise-links a, .megamenu__expertise-links p {
+          white-space: normal !important;
+          word-break: break-word !important;
+          overflow-wrap: break-word !important;
+        }
+        @media screen and (max-width: 1300px) and (min-width: 992px) {
+          .megamenu__content { padding-right: 2rem !important; }
+        }
+        @media screen and (max-width: 1250px) {
+          .megamenu__expertise-links { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media screen and (max-width: 767px) {
+          .megamenu__expertise-links { grid-template-columns: 1fr !important; }
+        }
 
         /* About Us - Laptop fit (smaller screens at 100% zoom) */
         @media screen and (max-width: 1400px) {
@@ -386,8 +402,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     <div class="hero__wrapper">
                         <div class="max-width-800px">
                             <div class="colour__white">
-                                <p data-w-id="993a6bc0-9580-2a31-05cb-1e336377e290" style="opacity:0"
-                                    class="text-style-solution-subheading">Company Profile</p>
                                 <h1 data-w-id="df936f7e-defb-f8a7-c796-d463c66def1c" style="opacity:0">THAL AKASH JAL DEFENCE TECHNOLOGIES PVT. LTD.</h1>
                                 <p data-w-id="df936f7e-defb-f8a7-c796-d463c66def20" style="opacity:0"
                                     class="text-style-large">Connecting Bharat with India.</p>

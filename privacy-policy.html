@@ -144,19 +144,32 @@ document.addEventListener("DOMContentLoaded", function() {
       <style>
         .megamenu__expertise-links {
           display: grid !important;
-          grid-template-columns: 1fr 1fr 1fr !important;
-          gap: 10px;
-          max-height: none !important; } .megamenu__expertise-links a, .megamenu__expertise-links p { white-space: normal !important; } @media screen and (max-width: 1100px) { .megamenu__expertise-links { grid-template-columns: 1fr 1fr !important; } } @media screen and (max-width: 767px) { .megamenu__expertise-links { grid-template-columns: 1fr !important; } }
+          grid-template-columns: repeat(3, 1fr) !important;
+          gap: 12px 16px !important;
+          max-height: none !important;
+          overflow: visible !important;
+        }
+        .megamenu__expertise-links a, .megamenu__expertise-links p {
+          white-space: normal !important;
+          word-break: break-word !important;
+          overflow-wrap: break-word !important;
+        }
+        @media screen and (max-width: 1300px) and (min-width: 992px) {
+          .megamenu__content { padding-right: 2rem !important; }
+        }
+        @media screen and (max-width: 1250px) {
+          .megamenu__expertise-links { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media screen and (max-width: 767px) {
+          .megamenu__expertise-links { grid-template-columns: 1fr !important; }
+        }
       </style>
       <div data-w-id="61163a2f-005b-6c43-a0cf-e3f01d933b60" data-animation="default" data-collapse="small"
         data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="navbar w-nav">
         <div class="navbar__wrapper">
           <div class="navigation"><a title="Jolly Good Web Homepage" href="index.htm" aria-current="page"
-              class="logo-link w-nav-brand w--current">
-              <div class="logo-img"
-                style="color: white; font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; letter-spacing: 1px; padding-top: 5px;">
-                THAL AKASH JAL</div>
-            </a>
+              class="logo-link w-nav-brand w--current"><img src="img/nav-logo.png" alt="THAL AKASH JAL" class="logo-img"
+                style="height: 96px; width: auto;"></a>
             <nav role="navigation" class="nav__menu w-nav-menu">
               <div class="nav__desktop">
 
@@ -298,11 +311,7 @@ document.addEventListener("DOMContentLoaded", function() {
         <div class="contain-4">
           <div class="pad xl-m">
             <div class="flex-h sb-c"><a title="Jolly Good Web Homepage" href="index.htm" aria-current="page"
-                class="logo-link-2 w-nav-brand w--current">
-                <div class="logo-img"
-                  style="color: white; font-weight: bold; font-size: 1.5rem; display: flex; align-items: center; letter-spacing: 1px; padding-top: 5px;">
-                  THAL AKASH JAL</div>
-              </a>
+                class="logo-link-2 w-nav-brand w--current"><img src="img/nav-logo.png" alt="THAL AKASH JAL" class="logo-img" style="height: 48px; width: auto;"></a>
               <nav role="navigation" class="nav-menu-3 w-nav-menu">
                 <ul role="list" class="mobile-nav-menu-2 w-list-unstyled">
 
@@ -373,11 +382,10 @@ document.addEventListener("DOMContentLoaded", function() {
                       </nav>
                     </div>
                   </li>
-                  <li class="nav-list-item no-padding"><a href="industries.html" class="text-style-nav mx-17">Industries</a>
-<a href="the-team.html" class="text-style-nav mx-17">Our Expertise</a>
-<a href="careers.html" class="text-style-nav mx-17">Careers</a>
-                <a href="contact.html" class="text-style-nav mx-17">Contact</a>
-                  </li>
+                  <li class="nav-list-item no-padding"><a href="industries.html" class="text-style-nav mx-17">Industries</a></li>
+                  <li class="nav-list-item no-padding"><a href="the-team.html" class="text-style-nav mx-17">Our Expertise</a></li>
+                  <li class="nav-list-item no-padding"><a href="careers.html" class="text-style-nav mx-17">Careers</a></li>
+                  <li class="nav-list-item no-padding"><a href="contact.html" class="text-style-nav mx-17">Contact</a></li>
 
                 </ul>
               </nav>
@@ -397,8 +405,7 @@ document.addEventListener("DOMContentLoaded", function() {
           <div class="hero__wrapper">
             <div class="max-width-900px">
               <div class="colour__white">
-                <p data-w-id="993a6bc0-9580-2a31-05cb-1e336377e290" style="opacity:0"
-                  class="text-style-solution-subheading">THAL AKASH JAL</p>
+                
                 <h1 data-w-id="df936f7e-defb-f8a7-c796-d463c66def1c" style="opacity:0">Privacy Policy</h1>
               </div>
             </div>
