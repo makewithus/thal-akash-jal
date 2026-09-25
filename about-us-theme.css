@@ -20,12 +20,23 @@
 /* ── Hero Section ── */
 .section.about-us {
   background-image:
-    linear-gradient(90deg, var(--taj-blue-primary) 40%, rgba(42, 82, 152, 0.5)),
-    linear-gradient(180deg, var(--taj-navy) 30%, rgba(13, 27, 62, 0.6)),
+    linear-gradient(90deg, var(--taj-blue-primary) 25%, rgba(42, 82, 152, 0.0) 90%),
+    linear-gradient(180deg, var(--taj-navy) 10%, rgba(13, 27, 62, 0.0) 40%),
     url(6893263d1e27013b67b77d36/689613e8ff52b838cd4e820f_about-us.webp) !important;
   background-position: 0 0, 0 0, 50% !important;
   background-size: auto, auto, cover !important;
 }
+
+/* ── Home Hero Section ── */
+.section.home-hero {
+  background-image:
+    linear-gradient(90deg, var(--taj-blue-primary) 25%, rgba(42, 82, 152, 0.0) 90%),
+    linear-gradient(180deg, var(--taj-navy) 10%, rgba(13, 27, 62, 0.0) 40%),
+    url(6893263d1e27013b67b77d36/6894c0c069ef2f3106fddd96_HomeHero.webp) !important;
+  background-position: 0 0, 0 0, 50% !important;
+  background-size: auto, auto, cover !important;
+}
+
 
 /* ── Navbar ── */
 .navbar {
@@ -569,4 +580,35 @@
   .nav__desktop .nav__link.dropdown .text-style-nav {
     font-size: 20px !important;
   }
+}
+
+/* ── Other Hero Sections globally applied ── */
+.section.accreditations {
+  background-image:
+    linear-gradient(90deg, var(--taj-blue-primary) 25%, rgba(42, 82, 152, 0.0) 90%),
+    linear-gradient(180deg, var(--taj-navy) 10%, rgba(13, 27, 62, 0.0) 40%),
+    url(6893263d1e27013b67b77d36/6899cd89faf871c3383747c8_Accreditations\ Hero.webp) !important;
+  background-position: 0 0, 0 0, 50% !important;
+  background-size: auto, auto, cover !important;
+}
+
+.section.careers {
+  background-image:
+    linear-gradient(90deg, var(--taj-blue-primary) 25%, rgba(42, 82, 152, 0.0) 90%),
+    linear-gradient(180deg, var(--taj-navy) 10%, rgba(13, 27, 62, 0.0) 40%),
+    url(https://cdn.prod.website-files.com/6893263d1e27013b67b77d36/6899e155c56ec4c0e90be6bd_Careers%20\(1\).webp) !important;
+  background-position: 0 0, 0 0, 50% !important;
+  background-size: auto, auto, cover !important;
+}
+
+.section.talk-to-us {
+  background-image:
+    linear-gradient(90deg, var(--taj-blue-primary) 25%, rgba(42, 82, 152, 0.0) 90%),
+    linear-gradient(180deg, var(--taj-navy) 10%, rgba(13, 27, 62, 0.0) 40%) !important;
+}
+
+.expertise__bg-overlays {
+  background-image:
+    linear-gradient(90deg, var(--taj-blue-primary) 25%, rgba(42, 82, 152, 0.0) 90%),
+    linear-gradient(180deg, var(--taj-navy) 10%, rgba(13, 27, 62, 0.0) 40%) !important;
 }
