@@ -6145,16 +6145,97 @@ blockquote {
     transition: transform 0.35s ease, background-color 0.3s ease !important;
 }
 
-/* Global desktop scale: match the site's 67% browser-zoom composition at default 100% zoom. */
+/* Global desktop density: preserve alignment while fitting sections better at default 100% zoom. */
 @media screen and (min-width: 992px) {
-    html,
-    body {
-        overflow-x: hidden !important;
+    h1 {
+        font-size: 3.25rem !important;
+        line-height: 3.9rem !important;
     }
 
-    .page {
-        width: calc(100% / 0.67) !important;
-        min-height: calc(100vh / 0.67) !important;
-        zoom: 0.67;
+    h2,
+    .style__h2 {
+        font-size: 3rem !important;
+        line-height: 3.6rem !important;
+    }
+
+    p,
+    li {
+        font-size: 1rem !important;
+        line-height: 1.35rem !important;
+    }
+
+    .button,
+    .button.white-background {
+        font-size: 1rem !important;
+        line-height: 1.2rem !important;
+        padding: 0.65rem 1.35rem !important;
+    }
+
+    .spacer__main,
+    .spacer__footer {
+        height: 3rem !important;
+    }
+
+    .spacer__hero,
+    .spacer__home-hero {
+        height: 4rem !important;
+    }
+
+    .home__card-wrapper,
+    .expertise__card-wrapper,
+    .expertise-solutions__content,
+    .solutions__card-content {
+        gap: 2rem !important;
+        align-items: flex-start !important;
+    }
+
+    .home__card-text-wrapper,
+    .about__card-text-wrapper,
+    .expertise__card-text-wrapper,
+    .solutions__card-text-wrapper {
+        gap: 0.75rem !important;
+        justify-content: flex-start !important;
+    }
+
+    .home__card-text-wrapper > img,
+    .about__card-text-wrapper > img,
+    .expertise__card-text-wrapper > img,
+    .solutions__card-text-wrapper > img,
+    .expertise-solutions__text-wrapper > img {
+        width: min(260px, 30vh) !important;
+        height: auto !important;
+        max-height: 220px !important;
+        object-fit: contain !important;
+        align-self: center !important;
+    }
+
+    .home__card-img-wrapper,
+    .about__card-img-wrapper,
+    .expertise__card-img-wrapper,
+    .solutions__card-img-wrapper {
+        max-height: 560px !important;
+    }
+
+    .about__card-img-wrapper {
+        gap: 1rem !important;
+    }
+
+    .about__card-img-1,
+    .about__card-img-2 {
+        min-height: 240px !important;
+    }
+
+    .expertise-card-wrapper {
+        height: 340px !important;
+        padding: 2rem !important;
+    }
+
+    .team__card-faces-wrapper {
+        margin-top: 4rem !important;
+    }
+
+    .team-member__img {
+        height: 330px !important;
+        margin-top: -5rem !important;
     }
 }
