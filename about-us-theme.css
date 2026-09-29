@@ -387,6 +387,7 @@
     margin-right: 17px !important;
     font-size: 20px !important;
   }
+}
 
 /* ── CTA image section ── */
 .expertise__card-solution-img {
@@ -622,3 +623,117 @@
     linear-gradient(90deg, var(--taj-blue-primary) 25%, rgba(42, 82, 152, 0.0) 90%),
     linear-gradient(180deg, var(--taj-navy) 10%, rgba(13, 27, 62, 0.0) 40%) !important;
 }
+
+/* ── Global Fixes for Services/Products layout ── */
+.solutions__card-img-wrapper.flexbox > img {
+  max-width: min(220px, 40%) !important;
+  height: auto !important;
+  max-height: 180px !important;
+  object-fit: contain !important;
+  align-self: center !important;
+  margin-bottom: 1rem;
+}
+
+.solutions__card-img-wrapper.flexbox .home__card-img-copy {
+  flex: 1 !important;
+  height: auto !important;
+  min-height: 120px !important;
+  width: 100%;
+}
+
+.solutions__card-img-wrapper.flexbox .colour__dark {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Ensure hero text on subpages is pushed down properly below the header */
+.expertise__hero-wrapper {
+  padding-top: 4rem !important;
+}
+
+/* Global container fix to match Image 3 (Centered, max-width, with padding) */
+.contain {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 2rem !important;
+  padding-right: 2rem !important;
+}
+
+/* Vertically center the text to match Image 3 perfectly */
+.about__card-text-wrapper,
+.home__card-text-wrapper,
+.expertise__card-text-wrapper,
+.solutions__card-text-wrapper {
+  justify-content: flex-start !important;
+}
+
+/* Ensure text and image blocks are aligned at the top, and push the image down to match the text height */
+@media screen and (min-width: 992px) {
+  .home__card-wrapper,
+  .about__card-wrapper,
+  .expertise__card-wrapper,
+  .expertise-solutions__content,
+  .solutions__card-wrapper {
+    align-items: flex-start !important;
+  }
+  
+  /* Push image down to align with the text, skipping the logo (80px logo + 32px margin = 112px = 7rem) */
+  .home__card-img-wrapper,
+  .about__card-img-wrapper,
+  .expertise__card-img-wrapper {
+    margin-top: 7rem !important;
+  }
+
+  /* Allow the left column of the solutions section to stretch and fill the height */
+  .solutions__card-img-wrapper {
+    height: auto !important;
+    min-height: 400px;
+  }
+  .solutions__card-img-wrapper.flexbox {
+    height: 100% !important;
+  }
+}
+
+/* Make images restore their natural aspect ratio by removing the height constraint I previously added */
+.home__card-img-wrapper,
+.expertise__card-img-wrapper {
+  height: 600px !important;
+}
+
+.about__card-img-wrapper {
+  height: 660px !important;
+}
+
+.about__card-img-1,
+.about__card-img-2 {
+  height: calc(50% - 0.5rem) !important;
+  min-height: 0 !important;
+}
+
+/* Fix the hero text touching the navbar */
+.hero__wrapper {
+  padding-top: 4rem !important;
+}
+
+/* Give the white card content proper breathing room from the top */
+.home__card-wrapper,
+.about__card-wrapper,
+.expertise__card-wrapper {
+  padding-top: 2rem !important;
+}
+
+/* Global constraint for all Union.svg logos in text wrappers so they fit in one glance */
+.home__card-text-wrapper img,
+.about__card-text-wrapper img,
+.expertise__card-text-wrapper img,
+.solutions__card-text-wrapper img,
+.solutions__card-img-wrapper.flexbox img {
+  width: 80px !important;
+  height: auto !important;
+  max-height: 80px !important;
+  margin-bottom: 2rem !important;
+  align-self: flex-start !important;
+}
+
+
+

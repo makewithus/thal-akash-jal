@@ -6176,9 +6176,12 @@ blockquote {
         height: 3rem !important;
     }
 
-    .spacer__hero,
-    .spacer__home-hero {
+    .spacer__hero {
         height: 4rem !important;
+    }
+
+    .spacer__home-hero {
+        height: 8rem !important;
     }
 
     .home__card-wrapper,
@@ -6186,7 +6189,7 @@ blockquote {
     .expertise-solutions__content,
     .solutions__card-content {
         gap: 2rem !important;
-        align-items: flex-start !important;
+        align-items: stretch !important;
     }
 
     .home__card-text-wrapper,
@@ -6213,16 +6216,19 @@ blockquote {
     .about__card-img-wrapper,
     .expertise__card-img-wrapper,
     .solutions__card-img-wrapper {
+        height: 560px !important;
         max-height: 560px !important;
     }
 
     .about__card-img-wrapper {
         gap: 1rem !important;
+        height: 560px !important;
     }
 
     .about__card-img-1,
     .about__card-img-2 {
-        min-height: 240px !important;
+        height: calc(50% - 0.5rem) !important;
+        min-height: 0 !important;
     }
 
     .expertise-card-wrapper {
