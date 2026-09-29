@@ -237,6 +237,80 @@
   background-color: rgba(26, 58, 107, 0.95) !important;
 }
 
+/* ── 100% zoom laptop fit refinements ── */
+@media screen and (min-width: 992px) and (max-width: 1440px) {
+  .spacer__main {
+    height: 3rem !important;
+  }
+
+  .spacer__hero {
+    height: 5rem !important;
+  }
+
+  .section.about-us + .section.card .home__card-wrapper {
+    gap: 2rem !important;
+    align-items: stretch !important;
+  }
+
+  .section.about-us + .section.card .about__card-text-wrapper {
+    gap: 0.55rem !important;
+    width: 46% !important;
+  }
+
+  .section.about-us + .section.card .about__card-text-wrapper p {
+    font-size: 0.92rem !important;
+    line-height: 1.35 !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .section.about-us + .section.card .about__card-text-wrapper .style__h3 {
+    font-size: 1.35rem !important;
+    line-height: 1.6rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .section.about-us + .section.card .about__card-text-wrapper img {
+    width: 30px !important;
+    height: 30px !important;
+    margin-bottom: 0.35rem !important;
+  }
+
+  .section.about-us + .section.card .about__card-img-wrapper {
+    gap: 1rem !important;
+    width: 54% !important;
+    max-height: 520px !important;
+  }
+
+  .section.about-us + .section.card .about__card-img-1,
+  .section.about-us + .section.card .about__card-img-2 {
+    min-height: 240px !important;
+  }
+
+  .home__cta-content {
+    gap: 1.25rem !important;
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  .team__card-faces-wrapper {
+    margin-top: 2rem !important;
+  }
+
+  .team__card-item-wrapper {
+    gap: 0 !important;
+  }
+}
+
+@media screen and (min-width: 992px) {
+  .section.careers + .section.expertise-card .expertise__card-img-wrapper {
+    display: none !important;
+  }
+
+  .section.careers + .section.expertise-card .expertise__card-text-wrapper {
+    width: 100% !important;
+  }
+}
+
 /* ── Mobile nav ── */
 .nav-menu-3 {
   background-color: var(--taj-blue-primary) !important;
