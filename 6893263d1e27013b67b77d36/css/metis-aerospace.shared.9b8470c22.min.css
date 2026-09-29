@@ -6144,3 +6144,17 @@ blockquote {
 .navbar, .navbar-mobile {
     transition: transform 0.35s ease, background-color 0.3s ease !important;
 }
+
+/* Global desktop scale: match the site's 67% browser-zoom composition at default 100% zoom. */
+@media screen and (min-width: 992px) {
+    html,
+    body {
+        overflow-x: hidden !important;
+    }
+
+    .page {
+        width: calc(100% / 0.67) !important;
+        min-height: calc(100vh / 0.67) !important;
+        zoom: 0.67;
+    }
+}
