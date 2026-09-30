@@ -237,15 +237,7 @@
   background-color: rgba(26, 58, 107, 0.95) !important;
 }
 
-@media screen and (min-width: 992px) {
-  .section.careers + .section.expertise-card .expertise__card-img-wrapper {
-    display: none !important;
-  }
 
-  .section.careers + .section.expertise-card .expertise__card-text-wrapper {
-    width: 100% !important;
-  }
-}
 
 /* ── Mobile nav ── */
 .nav-menu-3 {
@@ -666,9 +658,6 @@
   justify-content: flex-start !important;
 }
 
-.home__card-text-wrapper {
-  justify-content: center !important;
-}
 
 .home__card-text-wrapper h2 {
   align-self: center !important;
@@ -698,12 +687,27 @@
   .solutions__card-img-wrapper.flexbox {
     height: 100% !important;
   }
-}
 
-/* Make images restore their natural aspect ratio by removing the height constraint I previously added */
-.home__card-img-wrapper,
-.expertise__card-img-wrapper {
-  height: 600px !important;
+  .home__card-text-wrapper {
+    justify-content: center !important;
+  }
+
+  .home__card-img-wrapper,
+  .expertise__card-img-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    max-height: none !important;
+    align-self: stretch !important;
+  }
+
+  .home__card-img,
+  .expertise__bg-img,
+  .careers__card-img {
+    flex: 1 1 auto !important;
+    height: 100% !important;
+    width: 100% !important;
+  }
 }
 
 .about__card-img-wrapper {
@@ -731,7 +735,6 @@
 /* Global constraint for all Union.svg logos in text wrappers so they fit in one glance */
 .home__card-text-wrapper img,
 .about__card-text-wrapper img,
-.expertise__card-text-wrapper img,
 .solutions__card-text-wrapper img,
 .solutions__card-img-wrapper.flexbox img {
   width: 80px !important;
@@ -739,6 +742,14 @@
   max-height: 80px !important;
   margin-bottom: 2rem !important;
   align-self: flex-start !important;
+}
+
+.expertise__card-text-wrapper img {
+  width: 150px !important;
+  height: auto !important;
+  max-height: 150px !important;
+  margin-bottom: 2rem !important;
+  align-self: center !important;
 }
 
 /* ── Site-wide header, dropdown, hero and icon polish ── */
@@ -821,7 +832,6 @@
 .team__card-popup-name-wrapper > img,
 .home__card-text-wrapper > img,
 .about__card-text-wrapper > img,
-.expertise__card-text-wrapper > img,
 .solutions__card-text-wrapper > img,
 .expertise-solutions__text-wrapper > img {
   width: 96px !important;
@@ -1123,7 +1133,6 @@
   .team__card-popup-name-wrapper > img,
   .home__card-text-wrapper > img,
   .about__card-text-wrapper > img,
-  .expertise__card-text-wrapper > img,
   .solutions__card-text-wrapper > img,
   .expertise-solutions__text-wrapper > img {
     width: 72px !important;
