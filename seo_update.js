@@ -3,7 +3,7 @@ const path = require('path');
 
 const baseDir = __dirname;
 const siteUrl = 'https://www.thalakashjal.com';
-const logoUrl = `${siteUrl}/img/taj-logo.png`;
+const logoUrl = `${siteUrl}/img/nav-logo.png`;
 
 const pages = [
   {
