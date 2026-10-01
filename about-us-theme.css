@@ -17,6 +17,20 @@
   --taj-text-dark: #1a2744;
 }
 
+html,
+body,
+.page {
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* ── Hero Section ── */
 .section.about-us {
   background-image:
@@ -826,6 +840,16 @@
 .section.card,
 .section.expertise-card {
   margin-top: -5rem !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  border-radius: clamp(2.5rem, 5vw, 5rem) clamp(2.5rem, 5vw, 5rem) 0 0 !important;
+  overflow: hidden !important;
+}
+
+.section.card > .contain > .spacer__main,
+.section.expertise-card > .contain > .spacer__main,
+.footer .spacer__footer {
+  height: clamp(2rem, 4vw, 3.5rem) !important;
 }
 
 .team__card-wrapper > img,
@@ -983,6 +1007,103 @@
   animation: taj-dot-pulse 1.4s ease-in-out 0.55s infinite;
 }
 
+.taj-cta-animation {
+  position: relative;
+  display: inline-grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 128px;
+  height: 128px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(74, 144, 217, 0.28) 0%, rgba(74, 144, 217, 0.12) 48%, rgba(13, 27, 62, 0) 72%);
+  box-shadow: 0 0 42px rgba(74, 144, 217, 0.32);
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.taj-cta-ring {
+  position: absolute;
+  inset: 9px;
+  border: 2px solid rgba(143, 189, 255, 0.66);
+  border-top-color: rgba(232, 93, 42, 0.96);
+  border-right-color: rgba(74, 144, 217, 0.9);
+  border-radius: 50%;
+  animation: taj-spin 2.8s linear infinite;
+}
+
+.taj-cta-ring::before,
+.taj-cta-ring::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+}
+
+.taj-cta-ring::before {
+  inset: 16px;
+  border: 1px dashed rgba(255, 255, 255, 0.35);
+}
+
+.taj-cta-ring::after {
+  inset: 31px;
+  border: 1px solid rgba(143, 189, 255, 0.35);
+}
+
+.taj-cta-sweep {
+  position: absolute;
+  inset: 13px;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, rgba(232, 93, 42, 0.72), rgba(74, 144, 217, 0.24) 44deg, transparent 98deg);
+  animation: taj-scan 3.2s linear infinite;
+  opacity: 0.9;
+  mix-blend-mode: screen;
+}
+
+.taj-cta-core {
+  position: relative;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  background: rgba(13, 27, 62, 0.74);
+  box-shadow: inset 0 0 18px rgba(143, 189, 255, 0.22), 0 0 22px rgba(74, 144, 217, 0.34);
+  animation: taj-core-pulse 1.8s ease-in-out infinite;
+}
+
+.taj-cta-core img {
+  width: 62px !important;
+  max-width: 62px !important;
+  height: auto !important;
+  max-height: 62px !important;
+  object-fit: contain !important;
+}
+
+.taj-cta-dot {
+  position: absolute;
+  z-index: 3;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e85d2a;
+  box-shadow: 0 0 14px rgba(232, 93, 42, 0.8);
+}
+
+.taj-cta-dot.dot-one {
+  top: 22px;
+  right: 28px;
+  animation: taj-dot-pulse 1.4s ease-in-out infinite;
+}
+
+.taj-cta-dot.dot-two {
+  bottom: 26px;
+  left: 27px;
+  background: #4a90d9;
+  box-shadow: 0 0 14px rgba(74, 144, 217, 0.8);
+  animation: taj-dot-pulse 1.4s ease-in-out 0.55s infinite;
+}
+
 @keyframes taj-core-pulse {
   0%,
   100% {
@@ -1081,15 +1202,15 @@
 }
 
 .contact-page .section.talk-to-us + .section.expertise-card > .contain > .spacer__main:first-child {
-  height: clamp(1.5rem, 3vw, 2.5rem) !important;
+  height: clamp(1rem, 2vw, 1.75rem) !important;
 }
 
 .contact-page .contact__wrapper + .spacer__main {
-  height: clamp(1.25rem, 2vw, 2rem) !important;
+  height: clamp(0.75rem, 1.5vw, 1.25rem) !important;
 }
 
 .contact-page .main + .footer .spacer__footer {
-  height: clamp(1.5rem, 3vw, 2.5rem) !important;
+  height: clamp(0.75rem, 1.5vw, 1.25rem) !important;
 }
 
 .contact-page .footer {
@@ -1127,6 +1248,13 @@
   .section.card,
   .section.expertise-card {
     margin-top: -3rem !important;
+    border-radius: 2rem 2rem 0 0 !important;
+  }
+
+  .section.card > .contain > .spacer__main,
+  .section.expertise-card > .contain > .spacer__main,
+  .footer .spacer__footer {
+    height: 1.5rem !important;
   }
 
   .team__card-wrapper > img,
@@ -1143,6 +1271,6 @@
   .contact-page .section.talk-to-us + .section.expertise-card > .contain > .spacer__main:first-child,
   .contact-page .contact__wrapper + .spacer__main,
   .contact-page .main + .footer .spacer__footer {
-    height: 1.25rem !important;
+    height: 0.75rem !important;
   }
 }

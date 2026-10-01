@@ -465,7 +465,7 @@
               <p>Speak to one of our experts today to see how we can bring peace of mind to your
                 operations.</p>
               <div class="contact-form-block w-form">
-                <form id="wf-form-Contact-Form" name="wf-form-Contact-Form" data-name="Contact Form" method="get"
+                <form id="wf-form-Contact-Form" name="wf-form-Contact-Form" data-name="Contact Form" method="post"
                   class="contact-form" data-wf-page-id="689b0596a930eaca4ae89f44"
                   data-wf-element-id="a1f1d23e-8b9d-d727-0773-fa97f8161e83"
                   data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e"><input class="input-field w-input" maxlength="256"
@@ -474,7 +474,8 @@
                     type="email" id="Email" required=""><input class="input-field w-input" maxlength="256"
                     name="Telephone" data-name="Telephone" placeholder="Telephone:" type="tel" id="Telephone"
                     required=""><textarea required="" placeholder="Your Message:" maxlength="5000" id="Message"
-                    name="Message" data-name="Message" class="input-field text-area w-input"></textarea><label
+                    name="Message" data-name="Message" class="input-field text-area w-input"></textarea>
+                  <input type="checkbox" name="botcheck" class="hidden" style="display: none;"><label
                     class="w-checkbox">
                     <div class="w-checkbox-input w-checkbox-input--inputType-custom checkbox"></div>
                     <input type="checkbox" id="checkbox" name="checkbox" data-name="Checkbox" required=""
@@ -637,6 +638,122 @@
     <script src="npm/swiper%4011.2.6/swiper-bundle.min.js"></script>
 
     <script src="metis.js"></script>
+
+    <!-- ═══════════════════════════════════════════════════════════════════
+         THAL AKASH JAL — Custom Form Submission Logic (Web3Forms)
+         Intercepts the Webflow form submit BEFORE Webflow's own handler
+         and POSTs to Web3Forms API via fetch.
+         Uses Webflow's existing .w-form-done / .w-form-fail divs for UI.
+         No UI, classes, IDs, or other behaviour is modified.
+    ═══════════════════════════════════════════════════════════════════ -->
+    <script>
+    (function () {
+      'use strict';
+
+      var ENDPOINT = 'https://api.web3forms.com/submit';
+
+      function attachHandler() {
+        var form = document.getElementById('wf-form-Contact-Form');
+        if (!form) return;
+        
+        var wForm   = form.closest('.w-form')  || form.parentElement;
+        var doneDIV = wForm ? wForm.querySelector('.w-form-done') : null;
+        var failDIV = wForm ? wForm.querySelector('.w-form-fail') : null;
+
+        function showSuccess() {
+          form.style.display   = 'none';
+          if (doneDIV) { doneDIV.style.display = 'block'; doneDIV.removeAttribute('aria-hidden'); doneDIV.focus(); }
+          if (failDIV) { failDIV.style.display = 'none';  failDIV.setAttribute('aria-hidden', 'true'); }
+        }
+
+        function showError(msg) {
+          if (failDIV) {
+            var p = failDIV.querySelector('p');
+            if (p && msg) {
+              if (msg.length < 200) { 
+                p.dataset.originalText = p.dataset.originalText || p.innerHTML; 
+                p.innerHTML = msg; 
+              }
+            }
+            failDIV.style.display = 'block'; failDIV.removeAttribute('aria-hidden'); failDIV.focus();
+          }
+          if (doneDIV) { doneDIV.style.display = 'none'; doneDIV.setAttribute('aria-hidden', 'true'); }
+        }
+
+        function setSubmitBusy(busy) {
+          var btn = form.querySelector('input[type="submit"]');
+          if (!btn) return;
+          btn.disabled = busy;
+          if (busy) {
+            btn.dataset.originalValue = btn.value;
+            btn.value = btn.getAttribute('data-wait') || 'Please wait...';
+          } else {
+            btn.value = btn.dataset.originalValue || 'Submit';
+          }
+        }
+
+        form.addEventListener('submit', function (evt) {
+          evt.preventDefault();
+          evt.stopPropagation();
+
+          form.style.display = '';
+          if (doneDIV) { doneDIV.style.display = 'none'; doneDIV.setAttribute('aria-hidden', 'true'); }
+          if (failDIV) { failDIV.style.display = 'none'; failDIV.setAttribute('aria-hidden', 'true'); }
+
+          setSubmitBusy(true);
+
+          var data = new FormData(form);
+          data.append('access_key', '8254e1f6-577c-4049-9804-2365cd6c8be9');
+          data.append('subject', 'New Contact Form Submission - THAL AKASH JAL');
+          data.append('from_name', 'THAL AKASH JAL Website');
+          
+          // Remove custom Turnstile tokens since Web3Forms will reject them 
+          // if not configured inside the Web3Forms dashboard.
+          data.delete('cf-turnstile-response');
+          data.delete('g-recaptcha-response');
+
+          fetch(ENDPOINT, {
+            method : 'POST',
+            body   : data,
+            headers: { 'Accept': 'application/json' }
+          })
+          .then(function (response) {
+            var contentType = response.headers.get('content-type');
+            if (contentType && contentType.indexOf('application/json') !== -1) {
+              return response.json().then(function (json) {
+                return { status: response.status, body: json };
+              });
+            } else {
+              return response.text().then(function (text) {
+                return { status: response.status, body: { success: false, message: 'Security check failed or service unavailable. Please try again later.' } };
+              });
+            }
+          })
+          .then(function (result) {
+            setSubmitBusy(false);
+            if (result.status === 200 && result.body && result.body.success === true) {
+              showSuccess();
+            } else {
+              var errMsg = (result.body && result.body.message) ? result.body.message : '';
+              showError(errMsg);
+            }
+          })
+          .catch(function () {
+            setSubmitBusy(false);
+            showError('Network error. Please check your connection and try again, or email us at admin@thalakashjal.com');
+          });
+
+        }, true);
+      }
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', attachHandler);
+      } else {
+        attachHandler();
+      }
+    })();
+    </script>
 </body>
+
 
 </html>

@@ -1,0 +1,26 @@
+# ─── THAL AKASH JAL — .gitignore ───────────────────────────────────────────
+
+# ── SMTP / server secrets ────────────────────────────────────────────────────
+# NEVER commit the mailer config that contains the real SMTP password.
+mailer/config.php
+
+# ── PHP vendor directory (install via Composer on server) ───────────────────
+mailer/vendor/
+
+# ── Editor / OS junk ────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.orig
+
+# ── Node (if ever used locally) ─────────────────────────────────────────────
+node_modules/
+
+# ── Local environment files ──────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+
+# ── Build output ─────────────────────────────────────────────────────────────
+dist/
