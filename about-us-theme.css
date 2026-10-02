@@ -410,6 +410,16 @@ body,
 /* ── Megamenu Dropdown ── */
 .megamenu__dropdown-wrapper {
   background-color: var(--taj-blue-primary) !important;
+  height: auto !important;
+  min-height: 100%;
+  padding-bottom: 2rem !important;
+  border-radius: 0 0 25px 25px !important;
+}
+
+.dropdown-list-3.w--open, .dropdown-list.w--open {
+  height: auto !important;
+  min-height: max-content !important;
+  overflow: visible !important;
 }
 
 .megamenu__heading {
