@@ -94,6 +94,10 @@ body,
 }
 
 /* Ensure frames take full viewport height to prevent bleed */
+.main > .section:first-child {
+    min-height: calc(100vh + 8rem) !important;
+}
+
 .section.card,
 .section.home__innovation,
 .section.expertise-card {
@@ -204,6 +208,13 @@ body,
 
 .expertise-solution__card-item {
   color: var(--taj-white) !important;
+  padding: 1.5rem !important;
+  gap: 12px !important;
+}
+
+.expertise-solution__card-item p {
+  font-size: 0.95rem !important;
+  line-height: 1.4 !important;
 }
 
 .expertise-solution__card-item:hover {
@@ -213,6 +224,7 @@ body,
 
 .text-style-card-consolas {
   color: rgba(255, 255, 255, 0.7) !important;
+  margin-bottom: 0 !important;
 }
 
 .text-style-card-heading {
