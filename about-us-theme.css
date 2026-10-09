@@ -1388,6 +1388,11 @@ body,
     justify-content: flex-start !important;
     gap: 1.5rem !important;
 }
+@media screen and (min-width: 992px) {
+    .contact__address-content {
+        margin-top: 90px; /* Align with the top of the form fields */
+    }
+}
 
 .contact__wrapper {
     align-items: flex-start !important;
