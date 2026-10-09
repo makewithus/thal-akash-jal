@@ -1510,9 +1510,9 @@ body,
   border-color: rgba(13, 27, 62, 0.15) !important;
 }
 .taj-work-animation.light-theme .taj-work-sweep {
-  background: conic-gradient(from 0deg, rgba(13, 27, 62, 0.4), rgba(13, 27, 62, 0.1) 44deg, transparent 98deg) !important;
-  mix-blend-mode: multiply !important;
-  opacity: 0.6 !important;
+  background: conic-gradient(from 0deg, rgba(232, 93, 42, 0.72), rgba(74, 144, 217, 0.24) 44deg, transparent 98deg) !important;
+  mix-blend-mode: normal !important;
+  opacity: 0.9 !important;
 }
 .taj-work-animation.light-theme .taj-work-dot {
   background: #0d1b3e !important;
