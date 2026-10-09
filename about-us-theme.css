@@ -102,21 +102,16 @@ body,
     align-items: center !important;
 }
 
-/* Make solutions section neatly placed without left image */
-.solutions__card-img-wrapper.flexbox {
-    justify-content: flex-start !important;
-    width: 35% !important;
-}
+/* Make solutions section neatly placed */
 .solution__features-wrapper {
-    width: 65% !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 2rem !important;
 }
 @media screen and (max-width: 991px) {
-    .solutions__card-content {
-        flex-direction: column !important;
-    }
-    .solutions__card-img-wrapper.flexbox,
     .solution__features-wrapper {
-        width: 100% !important;
+        grid-template-columns: 1fr !important;
     }
 }
 
