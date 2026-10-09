@@ -46,8 +46,13 @@
     }
 
     .hero__wrapper.homepage h1 {
-      max-width: 800px;
+      max-width: 100%;
       line-height: 1.2;
+    }
+    @media screen and (min-width: 992px) {
+      .hero__wrapper.homepage h1 {
+        max-width: 800px;
+      }
     }
 
     .home__card-img-wrapper .home__card-img {
