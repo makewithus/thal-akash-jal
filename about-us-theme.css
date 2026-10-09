@@ -102,6 +102,24 @@ body,
     align-items: center !important;
 }
 
+/* Make solutions section neatly placed without left image */
+.solutions__card-img-wrapper.flexbox {
+    justify-content: flex-start !important;
+    width: 35% !important;
+}
+.solution__features-wrapper {
+    width: 65% !important;
+}
+@media screen and (max-width: 991px) {
+    .solutions__card-content {
+        flex-direction: column !important;
+    }
+    .solutions__card-img-wrapper.flexbox,
+    .solution__features-wrapper {
+        width: 100% !important;
+    }
+}
+
 .navbar__wrapper {
   background-color: transparent !important;
 }
