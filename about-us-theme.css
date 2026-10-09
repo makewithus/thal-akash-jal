@@ -79,6 +79,28 @@ body,
     }
 }
 
+/* Center Hero Text */
+.hero__wrapper.homepage {
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+}
+.hero__wrapper.homepage h1,
+.hero__wrapper.homepage p {
+    text-align: center !important;
+}
+.hero__wrapper.homepage .max-width-540px {
+    margin: 0 auto !important;
+}
+
+/* Ensure frames take full viewport height to prevent bleed */
+.section.card,
+.section.home__innovation {
+    min-height: 100vh !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
 .navbar__wrapper {
   background-color: transparent !important;
 }
