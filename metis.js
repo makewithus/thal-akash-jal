@@ -1,4 +1,4 @@
-﻿// ─── Mobile Scroll Freeze Fix — Intent-Tracking Approach ─────────────────────
+// ─── Mobile Scroll Freeze Fix — Intent-Tracking Approach ─────────────────────
 //
 // WHY THE OLD FIX FAILED:
 //   metis.js is loaded last, synchronously, AFTER all Webflow chunks. By the
@@ -150,7 +150,7 @@ const metis = {
         loop: true,
         slidesPerView: 3,
         grabCursor: true,
-        centeredSlides: true,
+        centeredSlides: false,
         navigation: {
           nextEl: '.home-next-btn',
           prevEl: '.home-prev-btn',

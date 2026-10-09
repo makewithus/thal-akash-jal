@@ -1284,3 +1284,57 @@ body,
     height: 0.75rem !important;
   }
 }
+.home__card-text-wrapper { width: 100% !important; }
+
+.expertise-solutions__text-wrapper > img {
+    width: 80px !important;
+    height: auto !important;
+    margin-bottom: 15px;
+}
+.expertise-solutions__text-wrapper {
+    width: 40% !important; 
+}
+
+.home__cta-text-wrapper { width: 100% !important; }
+
+.footer__divider-wrapper {
+    display: none !important;
+}
+.footer-wrapper {
+    justify-content: center !important;
+    gap: 3rem !important;
+}
+
+.expertise__card-text-wrapper {
+    width: 100% !important;
+}
+
+.product__tiles-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)) !important;
+    gap: 20px !important;
+    width: 100% !important;
+}
+
+.product__tiles-wrapper .w-richtext p {
+    background: #f4f6f8;
+    padding: 20px;
+    border-radius: 12px;
+    border-left: 4px solid var(--taj-blue-primary);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+.cta__text-wrapper {
+    width: 100% !important;
+}
+
+.contact__address-content {
+    height: auto !important;
+    padding: 2.5rem !important;
+    justify-content: flex-start !important;
+    gap: 1.5rem !important;
+}
+
+.contact__wrapper {
+    align-items: flex-start !important;
+}
