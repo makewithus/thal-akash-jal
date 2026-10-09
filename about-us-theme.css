@@ -95,7 +95,8 @@ body,
 
 /* Ensure frames take full viewport height to prevent bleed */
 .section.card,
-.section.home__innovation {
+.section.home__innovation,
+.section.expertise-card {
     min-height: 100vh !important;
     display: flex !important;
     align-items: center !important;
