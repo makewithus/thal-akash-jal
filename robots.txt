@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /news/
+Disallow: /solutions/
+Disallow: /careers/software-engineer-c-all-experience-levels.html
+
+Sitemap: https://www.thalakashjal.com/sitemap.xml
