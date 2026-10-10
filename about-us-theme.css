@@ -1411,6 +1411,8 @@ body,
     border-radius: 12px;
     border-left: 4px solid var(--taj-blue-primary);
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    color: #1a1a1a !important; /* Ensure text is dark and visible */
+    font-size: 1rem !important;
 }
 
 .cta__text-wrapper {
