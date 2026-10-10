@@ -830,6 +830,42 @@ body,
   background-image:
     linear-gradient(90deg, var(--taj-blue-primary) 25%, rgba(42, 82, 152, 0.0) 90%),
     linear-gradient(180deg, var(--taj-navy) 10%, rgba(13, 27, 62, 0.0) 40%) !important;
+  min-height: 100vh !important;
+  height: 100vh !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  overflow: hidden !important;
+}
+
+.section.talk-to-us .contain {
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  height: 100% !important;
+}
+
+.section.talk-to-us .spacer__hero,
+.section.talk-to-us .spacer__main {
+  display: none !important;
+}
+
+.section.talk-to-us .hero__wrapper,
+.section.talk-to-us .max-width-900px,
+.section.talk-to-us .colour__white {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  margin: 0 auto !important;
+}
+
+.section.talk-to-us h1 {
+  text-align: center !important;
+  margin: -60px auto 0 auto !important;
 }
 
 .expertise__bg-overlays {
@@ -1417,17 +1453,7 @@ body,
   height: clamp(0.75rem, 1.5vw, 1.25rem) !important;
 }
 
-.contact-page .main + .footer .spacer__footer {
-  height: clamp(0.75rem, 1.5vw, 1.25rem) !important;
-}
 
-.contact-page .footer {
-  margin-top: 0 !important;
-}
-
-.contact-page .footer-wrapper {
-  align-items: flex-start !important;
-}
 
 @media screen and (max-width: 1320px) and (min-width: 992px) {
   .megamenu__expertise-links,
@@ -1477,8 +1503,7 @@ body,
   }
 
   .contact-page .section.talk-to-us + .section.expertise-card > .contain > .spacer__main:first-child,
-  .contact-page .contact__wrapper + .spacer__main,
-  .contact-page .main + .footer .spacer__footer {
+  .contact-page .contact__wrapper + .spacer__main {
     height: 0.75rem !important;
   }
 }
