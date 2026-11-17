@@ -188,38 +188,28 @@ const metis = {
 // -----------------------------------------------------------------------------
 // Navbar: hide on scroll-down, reveal on scroll-up (all pages)
 // -----------------------------------------------------------------------------
+// Sticky Navbar - Kept firmly fixed at top without scroll hide/jumping
+// -----------------------------------------------------------------------------
 (function () {
   function initNavHide() {
     var navbar = document.querySelector('.navbar');
     var mobileNavbar = document.querySelector('.navbar-mobile');
     if (!navbar && !mobileNavbar) return;
 
-    var lastScrollY = window.scrollY;
-
-    window.addEventListener('scroll', function () {
-      var currentScrollY = window.scrollY;
-
-      // Check if mobile menu is open - if it is, NEVER hide the navbar
-      var isMobileOpen = false;
+    function handleScroll() {
+      var scrolled = window.scrollY > 20;
+      if (navbar) {
+        navbar.classList.toggle('scrolled', scrolled);
+        navbar.classList.remove('nav-hidden');
+      }
       if (mobileNavbar) {
-        var menuBtn = mobileNavbar.querySelector('.w-nav-button');
-        if (menuBtn && menuBtn.classList.contains('w--open')) {
-          isMobileOpen = true;
-        }
+        mobileNavbar.classList.toggle('scrolled', scrolled);
+        mobileNavbar.classList.remove('nav-hidden');
       }
+    }
 
-      if (currentScrollY > lastScrollY && currentScrollY > 80 && !isMobileOpen) {
-        // Scrolling DOWN - hide
-        if (navbar) navbar.classList.add('nav-hidden');
-        if (mobileNavbar) mobileNavbar.classList.add('nav-hidden');
-      } else {
-        // Scrolling UP (or menu open) - reveal
-        if (navbar) navbar.classList.remove('nav-hidden');
-        if (mobileNavbar) mobileNavbar.classList.remove('nav-hidden');
-      }
-
-      lastScrollY = currentScrollY;
-    }, { passive: true });
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
   }
 
   if (document.readyState === 'loading') {
