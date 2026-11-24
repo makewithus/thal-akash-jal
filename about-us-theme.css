@@ -1086,7 +1086,8 @@ body,
 }
 
 .dropdown-list-3.w--open,
-.navbar .dropdown-list-3.w--open {
+.navbar .dropdown-list-3.w--open,
+.w-dropdown-list.w--open {
   position: absolute !important;
   top: 100% !important;
   left: 50% !important;
@@ -1102,6 +1103,16 @@ body,
   background: transparent !important;
   box-shadow: none !important;
   overflow: visible !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.w-dropdown.w--open .nav__dropdown-triangle,
+.w-dropdown-toggle.w--open .nav__dropdown-triangle,
+.w-dropdown.w--open img.nav__dropdown-triangle {
+  transform: rotate(180deg) !important;
 }
 
 .megamenu__dropdown-wrapper {
@@ -1399,6 +1410,7 @@ body,
   font-weight: 700 !important;
   line-height: 1.35 !important;
   word-break: normal !important;
+  min-height: 2.7em !important;
 }
 
 .product-card-desc {
@@ -2120,3 +2132,22 @@ body,
 .navbar-mobile .button-nav {
   display: none !important;
 }
+
+/* ── Dropdown Desktop Hover & Display Stability ── */
+@media screen and (min-width: 992px) {
+  .nav__link.dropdown:hover > .w-dropdown-list,
+  .nav__link.dropdown:hover > .dropdown-list-3,
+  .navbar .w-dropdown:hover > .w-dropdown-list,
+  .navbar .w-dropdown:hover > .dropdown-list-3,
+  .w-dropdown:hover > .w-dropdown-list,
+  .w-dropdown.w--open > .w-dropdown-list,
+  .w-dropdown.w--open > .dropdown-list-3,
+  .dropdown-list-3.w--open,
+  .w-dropdown-list.w--open {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
+  }
+}
+

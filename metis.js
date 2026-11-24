@@ -218,3 +218,134 @@ const metis = {
     initNavHide();
   }
 })();
+
+// -----------------------------------------------------------------------------
+// Infallible Navigation Dropdown Toggle (Products, Services, etc.)
+// Ensures dropdowns open/close on click and hover reliably on EVERY page without errors
+// -----------------------------------------------------------------------------
+(function () {
+  function initNavDropdowns() {
+    var dropdownElements = document.querySelectorAll('.nav__link.dropdown, .navbar .w-dropdown, .w-dropdown');
+    if (!dropdownElements.length) return;
+
+    // Unbind Webflow's conflicting mouseup handler so it doesn't double-toggle
+    if (window.jQuery) {
+      try {
+        window.jQuery('.w-dropdown-toggle, .w-dropdown').off('mouseup.w-dropdown mousedown.w-dropdown');
+      } catch (e) {}
+    }
+
+    function openDropdown(dd) {
+      var t = dd.querySelector('.w-dropdown-toggle');
+      var l = dd.querySelector('.w-dropdown-list, .dropdown-list-3, .dropdown-list');
+      dd.classList.add('w--open');
+      if (t) {
+        t.classList.add('w--open');
+        t.setAttribute('aria-expanded', 'true');
+      }
+      if (l) {
+        l.classList.add('w--open');
+        l.style.display = 'block';
+        l.style.opacity = '1';
+        l.style.visibility = 'visible';
+        l.style.pointerEvents = 'auto';
+      }
+    }
+
+    function closeDropdown(dd) {
+      var t = dd.querySelector('.w-dropdown-toggle');
+      var l = dd.querySelector('.w-dropdown-list, .dropdown-list-3, .dropdown-list');
+      dd.classList.remove('w--open');
+      if (t) {
+        t.classList.remove('w--open');
+        t.setAttribute('aria-expanded', 'false');
+      }
+      if (l) {
+        l.classList.remove('w--open');
+        l.style.display = 'none';
+        l.style.opacity = '0';
+        l.style.visibility = 'hidden';
+        l.style.pointerEvents = 'none';
+      }
+    }
+
+    dropdownElements.forEach(function (dd) {
+      var toggle = dd.querySelector('.w-dropdown-toggle');
+      var list = dd.querySelector('.w-dropdown-list, .dropdown-list-3, .dropdown-list');
+      if (!toggle || !list) return;
+
+      if (toggle.dataset.tajNavBound) return;
+      toggle.dataset.tajNavBound = 'true';
+
+      // Click/Tap toggle handling
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var isOpen = list.classList.contains('w--open') && list.style.display !== 'none';
+
+        // Close other dropdowns
+        dropdownElements.forEach(function (otherDd) {
+          if (otherDd !== dd) {
+            closeDropdown(otherDd);
+          }
+        });
+
+        if (isOpen) {
+          closeDropdown(dd);
+        } else {
+          openDropdown(dd);
+        }
+      });
+
+      // Hover handling on desktop
+      dd.addEventListener('mouseenter', function () {
+        if (window.innerWidth >= 992) {
+          dropdownElements.forEach(function (otherDd) {
+            if (otherDd !== dd) closeDropdown(otherDd);
+          });
+          openDropdown(dd);
+        }
+      });
+
+      dd.addEventListener('mouseleave', function () {
+        if (window.innerWidth >= 992) {
+          closeDropdown(dd);
+        }
+      });
+
+      // Close when clicking any link inside the dropdown
+      list.addEventListener('click', function (e) {
+        var anchor = e.target.closest('a');
+        if (anchor && anchor.href) {
+          closeDropdown(dd);
+        }
+      });
+    });
+
+    // Close when clicking outside of any dropdown
+    document.addEventListener('click', function (e) {
+      if (!e.target.closest('.w-dropdown, .nav__link.dropdown')) {
+        dropdownElements.forEach(function (dd) {
+          closeDropdown(dd);
+        });
+      }
+    });
+
+    // Close when pressing Escape key
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        dropdownElements.forEach(function (dd) {
+          closeDropdown(dd);
+        });
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initNavDropdowns);
+  } else {
+    initNavDropdowns();
+  }
+  window.addEventListener('load', initNavDropdowns);
+})();
