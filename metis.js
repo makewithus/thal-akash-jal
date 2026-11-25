@@ -228,14 +228,25 @@ const metis = {
     var dropdownElements = document.querySelectorAll('.nav__link.dropdown, .navbar .w-dropdown, .w-dropdown');
     if (!dropdownElements.length) return;
 
-    // Unbind Webflow's conflicting mouseup handler so it doesn't double-toggle
+    // Unbind Webflow's conflicting dropdown handlers so they don't double-toggle
     if (window.jQuery) {
       try {
-        window.jQuery('.w-dropdown-toggle, .w-dropdown').off('mouseup.w-dropdown mousedown.w-dropdown');
+        window.jQuery('.w-dropdown-toggle, .w-dropdown').off('.w-dropdown');
       } catch (e) {}
     }
 
+    var hoverCloseTimers = new WeakMap();
+
+    function clearHoverTimer(dd) {
+      var timer = hoverCloseTimers.get(dd);
+      if (timer) {
+        clearTimeout(timer);
+        hoverCloseTimers.delete(dd);
+      }
+    }
+
     function openDropdown(dd) {
+      clearHoverTimer(dd);
       var t = dd.querySelector('.w-dropdown-toggle');
       var l = dd.querySelector('.w-dropdown-list, .dropdown-list-3, .dropdown-list');
       dd.classList.add('w--open');
@@ -253,6 +264,8 @@ const metis = {
     }
 
     function closeDropdown(dd) {
+      clearHoverTimer(dd);
+      delete dd.dataset.tajHoverPreview;
       var t = dd.querySelector('.w-dropdown-toggle');
       var l = dd.querySelector('.w-dropdown-list, .dropdown-list-3, .dropdown-list');
       dd.classList.remove('w--open');
@@ -277,12 +290,16 @@ const metis = {
       if (toggle.dataset.tajNavBound) return;
       toggle.dataset.tajNavBound = 'true';
 
-      // Click/Tap toggle handling
-      toggle.addEventListener('click', function (e) {
+      if (!toggle.hasAttribute('tabindex')) toggle.setAttribute('tabindex', '0');
+      if (!toggle.hasAttribute('role')) toggle.setAttribute('role', 'button');
+      if (!toggle.hasAttribute('aria-expanded')) toggle.setAttribute('aria-expanded', 'false');
+
+      function handleToggleActivate(e) {
         e.preventDefault();
         e.stopPropagation();
 
         var isOpen = list.classList.contains('w--open') && list.style.display !== 'none';
+        var isHoverPreview = dd.dataset.tajHoverPreview === 'true';
 
         // Close other dropdowns
         dropdownElements.forEach(function (otherDd) {
@@ -291,26 +308,50 @@ const metis = {
           }
         });
 
-        if (isOpen) {
+        // If currently open only via hover preview, clicking pins it open instead of closing
+        if (isOpen && isHoverPreview) {
+          delete dd.dataset.tajHoverPreview;
+          openDropdown(dd);
+        } else if (isOpen) {
           closeDropdown(dd);
         } else {
+          delete dd.dataset.tajHoverPreview;
           openDropdown(dd);
+        }
+      }
+
+      // Click/Tap toggle handling
+      toggle.addEventListener('click', handleToggleActivate);
+
+      // Keyboard toggle handling (Enter / Space)
+      toggle.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          handleToggleActivate(e);
         }
       });
 
-      // Hover handling on desktop
-      dd.addEventListener('mouseenter', function () {
-        if (window.innerWidth >= 992) {
+      // Hover handling on desktop (hover-capable pointers only)
+      dd.addEventListener('pointerenter', function (e) {
+        if (window.innerWidth >= 992 && e.pointerType !== 'touch') {
+          clearHoverTimer(dd);
           dropdownElements.forEach(function (otherDd) {
             if (otherDd !== dd) closeDropdown(otherDd);
           });
+          if (!list.classList.contains('w--open')) {
+            dd.dataset.tajHoverPreview = 'true';
+          }
           openDropdown(dd);
         }
       });
 
-      dd.addEventListener('mouseleave', function () {
-        if (window.innerWidth >= 992) {
-          closeDropdown(dd);
+      dd.addEventListener('pointerleave', function (e) {
+        if (window.innerWidth >= 992 && e.pointerType !== 'touch') {
+          clearHoverTimer(dd);
+          hoverCloseTimers.set(dd, setTimeout(function () {
+            if (dd.dataset.tajHoverPreview === 'true') {
+              closeDropdown(dd);
+            }
+          }, 120));
         }
       });
 

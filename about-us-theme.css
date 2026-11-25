@@ -1090,6 +1090,7 @@ body,
 .w-dropdown-list.w--open {
   position: absolute !important;
   top: 100% !important;
+  bottom: auto !important;
   left: 50% !important;
   right: auto !important;
   transform: translateX(-50%) !important;
@@ -1097,6 +1098,7 @@ body,
   max-width: 1200px !important;
   height: auto !important;
   min-height: auto !important;
+  max-height: none !important;
   margin: 0 auto !important;
   padding: 0 !important;
   z-index: 99999 !important;
@@ -1106,6 +1108,19 @@ body,
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
+  pointer-events: auto !important;
+}
+
+.dropdown-list-3.w--open::before,
+.navbar .dropdown-list-3.w--open::before,
+.w-dropdown-list.w--open::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 100% !important;
+  height: 60px !important;
+  background: transparent !important;
   pointer-events: auto !important;
 }
 
@@ -2133,13 +2148,8 @@ body,
   display: none !important;
 }
 
-/* ── Dropdown Desktop Hover & Display Stability ── */
+/* ── Dropdown Desktop Display Stability ── */
 @media screen and (min-width: 992px) {
-  .nav__link.dropdown:hover > .w-dropdown-list,
-  .nav__link.dropdown:hover > .dropdown-list-3,
-  .navbar .w-dropdown:hover > .w-dropdown-list,
-  .navbar .w-dropdown:hover > .dropdown-list-3,
-  .w-dropdown:hover > .w-dropdown-list,
   .w-dropdown.w--open > .w-dropdown-list,
   .w-dropdown.w--open > .dropdown-list-3,
   .dropdown-list-3.w--open,
