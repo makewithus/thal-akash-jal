@@ -390,3 +390,222 @@ const metis = {
   }
   window.addEventListener('load', initNavDropdowns);
 })();
+
+// -----------------------------------------------------------------------------
+// Mobile Navigation Drawer (<dialog> + scroll-snap) for Mobile/Tablet <= 991px
+// -----------------------------------------------------------------------------
+(function () {
+  function initMobileDrawer() {
+    if (document.getElementById('taj-mobile-drawer')) return;
+    var openBtn = document.querySelector('.navbar-mobile .nav__menu-btn');
+    var desktopNav = document.querySelector('.navbar .nav__desktop');
+    if (!openBtn || !desktopNav) return;
+
+    // Unbind Webflow's default mobile nav toggle so it doesn't fight our drawer
+    if (window.jQuery) {
+      try {
+        window.jQuery('.navbar-mobile .w-nav-button').off('.w-nav');
+      } catch (e) {}
+    }
+
+    openBtn.setAttribute('role', 'button');
+    openBtn.setAttribute('tabindex', '0');
+    openBtn.setAttribute('aria-label', 'Open navigation menu');
+    openBtn.setAttribute('aria-expanded', 'false');
+    openBtn.setAttribute('aria-controls', 'taj-mobile-drawer');
+
+    var logoLink = document.querySelector('.navbar-mobile .logo-link');
+    var logoImg = document.querySelector('.navbar-mobile .logo-img');
+    var homeHref = logoLink ? logoLink.getAttribute('href') : 'index.htm';
+    var logoSrc = logoImg ? logoImg.getAttribute('src') : 'img/nav-logo.png';
+
+    var drawer = document.createElement('dialog');
+    drawer.id = 'taj-mobile-drawer';
+    drawer.className = 'taj-mobile-drawer';
+    drawer.setAttribute('aria-label', 'Mobile navigation');
+
+    var scroller = document.createElement('div');
+    scroller.className = 'taj-drawer-scroller';
+
+    var sheet = document.createElement('nav');
+    sheet.className = 'taj-drawer-sheet';
+    sheet.setAttribute('aria-label', 'Mobile primary');
+
+    var header = document.createElement('div');
+    header.className = 'taj-drawer-header';
+
+    var brand = document.createElement('a');
+    brand.className = 'taj-drawer-brand';
+    brand.href = homeHref;
+    var brandImg = document.createElement('img');
+    brandImg.src = logoSrc;
+    brandImg.alt = 'THAL AKASH JAL';
+    brand.appendChild(brandImg);
+
+    var closeBtn = document.createElement('button');
+    closeBtn.type = 'button';
+    closeBtn.id = 'taj-drawer-close';
+    closeBtn.className = 'taj-drawer-close';
+    closeBtn.setAttribute('aria-label', 'Close navigation menu');
+    closeBtn.setAttribute('autofocus', '');
+    closeBtn.textContent = '×';
+
+    header.appendChild(brand);
+    header.appendChild(closeBtn);
+    sheet.appendChild(header);
+
+    var navWrap = document.createElement('div');
+    navWrap.className = 'taj-drawer-nav';
+    var ul = document.createElement('ul');
+    ul.className = 'taj-drawer-list';
+
+    var children = Array.prototype.slice.call(desktopNav.children);
+    children.forEach(function (child, idx) {
+      var li = document.createElement('li');
+      if (child.tagName === 'A') {
+        var a = document.createElement('a');
+        a.className = 'taj-drawer-link';
+        a.href = child.getAttribute('href');
+        a.textContent = child.textContent.trim();
+        li.appendChild(a);
+        ul.appendChild(li);
+      } else if (child.classList.contains('w-dropdown')) {
+        var toggleEl = child.querySelector('.w-dropdown-toggle');
+        var label = toggleEl ? toggleEl.textContent.trim() : 'Menu';
+        var subId = 'taj-drawer-sub-' + idx;
+
+        var accBtn = document.createElement('button');
+        accBtn.type = 'button';
+        accBtn.className = 'taj-drawer-accordion-btn';
+        accBtn.setAttribute('aria-expanded', 'false');
+        accBtn.setAttribute('aria-controls', subId);
+        accBtn.innerHTML = '<span></span><span class="taj-drawer-chevron" aria-hidden="true">▼</span>';
+        accBtn.querySelector('span').textContent = label;
+
+        var subUl = document.createElement('ul');
+        subUl.id = subId;
+        subUl.className = 'taj-drawer-sublist';
+        subUl.hidden = true;
+
+        var subLinks = child.querySelectorAll('.megamenu__link-item, .megamenu__cta-link');
+        Array.prototype.forEach.call(subLinks, function (link) {
+          var subLi = document.createElement('li');
+          var subA = document.createElement('a');
+          subA.className = 'taj-drawer-sublink' + (link.classList.contains('megamenu__cta-link') ? ' taj-drawer-cta-link' : '');
+          subA.href = link.getAttribute('href');
+          subA.textContent = link.textContent.trim();
+          subLi.appendChild(subA);
+          subUl.appendChild(subLi);
+        });
+
+        accBtn.addEventListener('click', function () {
+          var expanded = accBtn.getAttribute('aria-expanded') === 'true';
+          accBtn.setAttribute('aria-expanded', String(!expanded));
+          subUl.hidden = expanded;
+        });
+
+        li.appendChild(accBtn);
+        li.appendChild(subUl);
+        ul.appendChild(li);
+      }
+    });
+
+    navWrap.appendChild(ul);
+    sheet.appendChild(navWrap);
+    scroller.appendChild(sheet);
+    drawer.appendChild(scroller);
+    document.body.appendChild(drawer);
+
+    var supportsScrollTimeline = typeof CSS !== 'undefined' && CSS.supports && CSS.supports('animation-timeline: scroll()');
+    if (!supportsScrollTimeline) {
+      scroller.addEventListener('scroll', function () {
+        if (!sheet.offsetWidth) return;
+        var ratio = Math.max(0, Math.min(1, 1 - scroller.scrollLeft / sheet.offsetWidth));
+        drawer.style.setProperty('--drawer-backdrop', String(ratio));
+      }, { passive: true });
+    }
+
+    function openDrawer() {
+      if (drawer.open) return;
+      drawer.showModal();
+      var supportsInitialTarget = typeof CSS !== 'undefined' && CSS.supports && CSS.supports('scroll-initial-target', 'nearest');
+      if (!supportsInitialTarget) {
+        scroller.scrollTo({ left: scroller.offsetWidth, behavior: 'instant' });
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            scroller.scrollTo({ left: 0, behavior: 'auto' });
+          });
+        });
+      } else {
+        scroller.scrollTo({ left: 0, behavior: 'auto' });
+      }
+    }
+
+    function closeDrawer() {
+      if (!drawer.open) return;
+      scroller.scrollTo({ left: scroller.offsetWidth, behavior: 'auto' });
+    }
+
+    var visibleThreshold = 1 / Math.max(1, window.innerWidth);
+    var observer = new IntersectionObserver(function (entries) {
+      var entry = entries[entries.length - 1];
+      if (!entry) return;
+      if (entry.intersectionRatio < visibleThreshold && drawer.open) {
+        drawer.close();
+        openBtn.setAttribute('aria-expanded', 'false');
+      } else if (entry.intersectionRatio >= 0.99 && drawer.open) {
+        openBtn.setAttribute('aria-expanded', 'true');
+      }
+    }, { root: drawer, threshold: [visibleThreshold, 0.99] });
+    observer.observe(sheet);
+
+    openBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      openDrawer();
+    });
+
+    openBtn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openDrawer();
+      }
+    });
+
+    closeBtn.addEventListener('click', closeDrawer);
+
+    drawer.addEventListener('click', function (e) {
+      if (!sheet.contains(e.target)) {
+        closeDrawer();
+      }
+    });
+
+    drawer.addEventListener('cancel', function (e) {
+      if (e.cancelable) {
+        e.preventDefault();
+        closeDrawer();
+      }
+    });
+
+    sheet.addEventListener('click', function (e) {
+      var a = e.target.closest('a');
+      if (a && a.href && drawer.open) {
+        drawer.close();
+        openBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    window.addEventListener('resize', function () {
+      if (window.innerWidth >= 992 && drawer.open) {
+        drawer.close();
+        openBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileDrawer);
+  } else {
+    initMobileDrawer();
+  }
+})();
