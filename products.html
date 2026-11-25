@@ -427,46 +427,23 @@
       </div>
 
       
-      <div class="section card industries-section" id="industries-section-anchor"
       <div class="section card industries-section" id="industries-section-anchor" style="padding-top: 0; background: #f4f6fa;">
         
-        <!-- Sticky Jump Navigation -->
-        <nav class="vertical-jump-nav" style="position: sticky; top: 72px; z-index: 100; background: #0d1b2e; border-bottom: 2px solid rgba(74, 144, 217, 0.3); padding: 12px 0; box-shadow: 0 6px 20px rgba(0,0,0,0.3);">
-          <div class="contain" style="display: flex; gap: 10px; overflow-x: auto; scrollbar-width: none; -ms-overflow-style: none; padding: 0 20px;">
-            <a href="#cat-01" class="cat-jump-pill">01. Fuel Storage</a>
-            <a href="#cat-02" class="cat-jump-pill">02. EW &amp; SDR</a>
-            <a href="#cat-03" class="cat-jump-pill">03. Ground Robotics</a>
-            <a href="#cat-04" class="cat-jump-pill">04. Aerial Systems</a>
-            <a href="#cat-05" class="cat-jump-pill">05. Electric Propulsion</a>
-            <a href="#cat-06" class="cat-jump-pill">06. Protection</a>
-            <a href="#cat-07" class="cat-jump-pill">07. Composites &amp; Power</a>
-            <a href="#cat-08" class="cat-jump-pill">08. Naval Systems</a>
-            <a href="#cat-09" class="cat-jump-pill" style="border-color: #00bcd4; color: #80deea;">09. Boats &amp; Structures</a>
-            <a href="#master-summary" class="cat-jump-pill" style="border-color: #e85d2a; color: #f68a5c;">Portfolio Summary</a>
-          </div>
-        </nav>
-
         <style>
-          .cat-jump-pill {
-            white-space: nowrap;
-            padding: 8px 18px;
-            background: rgba(255, 255, 255, 0.08);
-            color: #d1dced;
-            border-radius: 24px;
-            font-size: 0.88rem;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.25s ease;
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            display: inline-flex;
-            align-items: center;
+          .section.card.industries-section {
+            display: block !important;
+            align-items: initial !important;
+            min-height: auto !important;
           }
-          .cat-jump-pill:hover {
-            background: #e85d2a;
-            color: #ffffff !important;
-            border-color: #e85d2a;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(232, 93, 42, 0.3);
+          .section.card.industries-section > * {
+            width: 100%;
+          }
+          #industries-section-anchor .contain {
+            height: auto !important;
+            min-height: 0 !important;
+            justify-content: flex-start !important;
+            align-items: stretch !important;
+            max-width: 1280px !important;
           }
           .vertical-section-block {
             padding: 48px 0;
@@ -485,6 +462,13 @@
             align-items: center;
             flex-wrap: wrap;
             gap: 24px;
+          }
+          .vertical-banner > div:first-child {
+            flex: 1 1 640px;
+            min-width: 280px;
+          }
+          .vertical-banner > div:last-child {
+            flex: 0 0 auto;
           }
           .badge-pill-light {
             background: rgba(255, 255, 255, 0.12);
@@ -513,9 +497,40 @@
             grid-template-columns: repeat(4, 1fr);
             gap: 20px;
           }
+          #industries-section-anchor [style*="display: grid"][style*="grid-template-columns: repeat(3, 1fr)"] {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+          }
+          #industries-section-anchor [style*="display: grid"][style*="grid-template-columns: 1fr 1fr"] {
+            grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+          }
+          #industries-section-anchor [style*="display: grid"][style*="grid-template-columns: repeat(4, 1fr)"] {
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+          }
+          #industries-section-anchor .product-card-rich,
+          #industries-section-anchor [style*="display: grid"] > div {
+            min-width: 0;
+          }
+          #industries-section-anchor [style*="display: flex"][style*="justify-content: space-between"],
+          #industries-section-anchor [style*="display: flex"][style*="align-items: center"] {
+            flex-wrap: wrap;
+          }
+          #industries-section-anchor img {
+            max-width: 100%;
+            height: auto;
+          }
+          #industries-section-anchor [id^="cat-"],
+          #master-summary {
+            scroll-margin-top: 150px;
+          }
           @media screen and (max-width: 1024px) {
             .cards-grid-3col, .cards-grid-4col {
               grid-template-columns: repeat(2, 1fr);
+            }
+            #industries-section-anchor [style*="display: grid"][style*="grid-template-columns: repeat(3, 1fr)"] {
+              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+            #industries-section-anchor [style*="display: grid"][style*="grid-template-columns: repeat(4, 1fr)"] {
+              grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
             }
           }
           @media screen and (max-width: 768px) {
@@ -524,6 +539,37 @@
             }
             .vertical-banner {
               padding: 24px 20px;
+            }
+            .vertical-banner > div:first-child,
+            .vertical-banner > div:last-child {
+              flex: 1 1 100%;
+            }
+            .vertical-banner > div:last-child .button,
+            .vertical-banner > div:last-child .w-button {
+              width: 100%;
+              justify-content: center;
+            }
+            #industries-section-anchor [style*="display: grid"][style*="grid-template-columns: repeat(3, 1fr)"],
+            #industries-section-anchor [style*="display: grid"][style*="grid-template-columns: 1fr 1fr"],
+            #industries-section-anchor [style*="display: grid"][style*="grid-template-columns: repeat(4, 1fr)"] {
+              grid-template-columns: 1fr !important;
+            }
+            #industries-section-anchor [style*="display: flex"][style*="align-items: center"] {
+              flex-direction: column;
+              align-items: stretch !important;
+            }
+            #industries-section-anchor [id^="cat-"],
+            #master-summary {
+              scroll-margin-top: 130px;
+            }
+          }
+          @media screen and (max-width: 640px) {
+            .expertise__hero-wrapper h1.industries-reveal {
+              font-size: clamp(1.65rem, 7vw, 2.1rem) !important;
+              line-height: 1.25 !important;
+            }
+            #industries-section-anchor .vertical-banner h2 {
+              font-size: clamp(1.35rem, 6vw, 1.8rem) !important;
             }
           }
           .product-card-rich {
