@@ -17,9 +17,3 @@ node_modules/
 
 # ── Build output ─────────────────────────────────────────────────────────────
 dist/
-
-# ── Privacy-Sensitive Assets & Images ───────────────────────────────────────
-images/
-**/images/
-**/images/**
-ship.png
